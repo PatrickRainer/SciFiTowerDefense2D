@@ -75,14 +75,19 @@ public class Tower : MonoBehaviour
     {
         nearestTarget = null;
         float minimalEnemyDistance = float.MaxValue;
+        float distanceBetweenEnemy = 0;
 
         foreach (GameObject enemy in enemiesInRange)
         {
-            float distanceToGoal = enemy.GetComponent<Enemy>().GetDistanceToEndGoal();
-            if (distanceToGoal < minimalEnemyDistance)
+            distanceBetweenEnemy = Vector2.Distance(enemy.GetPosition(), gameObject.GetPosition());
+
+            // This would set the enemy which is nearest to the targetzone
+            //float distanceToGoal = enemy.GetComponent<Enemy>().GetDistanceToEndGoal();
+
+            if (distanceBetweenEnemy < minimalEnemyDistance)
             {
                 nearestTarget = enemy;
-                minimalEnemyDistance = distanceToGoal;
+                minimalEnemyDistance = distanceBetweenEnemy;
             }
         }
     }

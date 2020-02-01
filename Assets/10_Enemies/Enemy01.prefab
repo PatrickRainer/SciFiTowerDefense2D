@@ -198,7 +198,7 @@ MonoBehaviour:
   - {fileID: 0}
   lastWaypoint: {fileID: 0}
   rotationRange: 0.4
-  speed: 2
+  speed: 1
   health: 100
   rotationDuration: 0.5
 --- !u!58 &902018126465311431
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  _angularSpeed: 120
+  _angularSpeed: 60
   _acceleration: 8
-  _stoppingDistance: 0
+  _stoppingDistance: 1
   _autoBraking: 1
   _radius: 5
   _quality: 0

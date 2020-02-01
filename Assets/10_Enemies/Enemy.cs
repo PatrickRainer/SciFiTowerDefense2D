@@ -100,57 +100,52 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        WaypointHandling();
-    }
+    //private void WaypointHandling()
+    //{
+    //    Vector3 curWPpos = waypoints[currentWaypointIndex].transform.position;
 
-    private void WaypointHandling()
-    {
-        Vector3 curWPpos = waypoints[currentWaypointIndex].transform.position;
+    //        if (IsLastWaypoint())
+    //        {
+    //            //Debug.Log("LastWaypoint reached");
+    //            LevelManager.PlayerHealth -= 1;
+    //            cameraShake.StartShake();
+    //            Destroy(gameObject);
+    //        }
+    //        else if (IsInRangeOf(curWPpos))
+    //        {
+    //            currentWaypointIndex++;
+    //            curWPpos = waypoints[currentWaypointIndex].transform.position;
+    //            //LookAt(curWPpos, transform.position, transform);  // Handled in SetDirection
+    //            lastWaypointReachedTime = Time.time;
+    //        }
+    //}
 
-            if (IsLastWaypoint())
-            {
-                //Debug.Log("LastWaypoint reached");
-                LevelManager.PlayerHealth -= 1;
-                cameraShake.StartShake();
-                Destroy(gameObject);
-            }
-            else if (IsInRangeOf(curWPpos))
-            {
-                currentWaypointIndex++;
-                curWPpos = waypoints[currentWaypointIndex].transform.position;
-                //LookAt(curWPpos, transform.position, transform);  // Handled in SetDirection
-                lastWaypointReachedTime = Time.time;
-            }
-    }
+    //private bool IsLastWaypoint()
+    //{
+    //    float distance = Vector3.Distance(transform.position, lastWaypoint.GetPosition());
+    //    return distance < 1;
+    //}
 
-    private bool IsLastWaypoint()
-    {
-        float distance = Vector3.Distance(transform.position, lastWaypoint.GetPosition());
-        return distance < 1;
-    }
+    ////compares the waypoint exactly
+    //private bool EnemyReachedWaypoint(Vector3 waypointPosition)
+    //{
+    //    if (transform.position.Equals(waypointPosition))
+    //    {
+    //        return true;
+    //    }
+    //    else
+    //    {
+    //        return false;
+    //    }
+    //}
 
-    //compares the waypoint exactly
-    private bool EnemyReachedWaypoint(Vector3 waypointPosition)
-    {
-        if (transform.position.Equals(waypointPosition))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    //Compares the waypoint with some range tolerance
-    //https://answers.unity.com/questions/540120/how-do-you-update-navmesh-rotation-after-stopping.html
-    private bool IsInRangeOf(Vector3 targetPos)
-    {
-        float distance = Vector3.Distance(transform.position, targetPos);
-        return distance < rotationRange;
-    }
+    ////Compares the waypoint with some range tolerance
+    ////https://answers.unity.com/questions/540120/how-do-you-update-navmesh-rotation-after-stopping.html
+    //private bool IsInRangeOf(Vector3 targetPos)
+    //{
+    //    float distance = Vector3.Distance(transform.position, targetPos);
+    //    return distance < rotationRange;
+    //}
 
     //private void RotateTowards(Transform target)
     //{
@@ -159,28 +154,28 @@ public class Enemy : MonoBehaviour
     //    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     //}
 
-    public void LookAt(Vector3 targetPos, Vector3 sourcePos, Transform transformToRotate)
-    {
-        Vector3 distance = targetPos - sourcePos;
-        float rotZ = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg;
+    //public void LookAt(Vector3 targetPos, Vector3 sourcePos, Transform transformToRotate)
+    //{
+    //    Vector3 distance = targetPos - sourcePos;
+    //    float rotZ = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg;
 
-        transformToRotate.transform.DOLocalRotate(new Vector3(0, 0, rotZ), rotationDuration).Play();
-    }
+    //    transformToRotate.transform.DOLocalRotate(new Vector3(0, 0, rotZ), rotationDuration).Play();
+    //}
 
-    public float GetDistanceToEndGoal()
-    {
-        float distance = 0;
-        distance += Vector2.Distance(transform.position, waypoints[currentWaypointIndex + 1].transform.position);
+    //public float GetDistanceToEndGoal()
+    //{
+    //    float distance = 0;
+    //    distance += Vector2.Distance(transform.position, waypoints[currentWaypointIndex + 1].transform.position);
 
-        for (int i = currentWaypointIndex;  i < waypoints.Length -1; i++)
-        {
-            Vector3 startPosition = waypoints[i].transform.position;
-            Vector3 endPosition = waypoints[i + 1].transform.position;
-            distance += Vector2.Distance(startPosition, endPosition);
-        }
+    //    for (int i = currentWaypointIndex;  i < waypoints.Length -1; i++)
+    //    {
+    //        Vector3 startPosition = waypoints[i].transform.position;
+    //        Vector3 endPosition = waypoints[i + 1].transform.position;
+    //        distance += Vector2.Distance(startPosition, endPosition);
+    //    }
 
-        return distance;
-    }
+    //    return distance;
+    //}
 
     public void HitEnemy(int damage)
     {
