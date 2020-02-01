@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5c6246184acd1a141b9fc94154bb8e04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6476dd07801c3e64aae1e535fec4f1a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,3 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTower: {fileID: 0}
   towerProvider: {fileID: 11400000, guid: 2e8a45211f1724d418e8367fbc90de7a, type: 2}
+  gizmoRange: 3
