@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TowerProvider
   m_EditorClassIdentifier: 
   availableTowers:
-  - {fileID: 2162440734104741327, guid: f4eb33671657fa44eb090176c5e09363, type: 3}
-  - {fileID: 4802940664036316848, guid: 317f08b7a6d94bc4e8b47a8222360bf2, type: 3}
-  - {fileID: 315642011121447603, guid: 304aadd1f41495941aca957a96f54a8b, type: 3}
+  - {fileID: 2162440734104741327, guid: 6cb3964c5257fec499a6ef040a906568, type: 3}
+  - {fileID: 2162440734104741327, guid: 5684d8186c37ee7479e84f91645e21ca, type: 3}
+  - {fileID: 2162440734104741327, guid: fba67567cdadc5e4a9447ebbb34e4f5e, type: 3}

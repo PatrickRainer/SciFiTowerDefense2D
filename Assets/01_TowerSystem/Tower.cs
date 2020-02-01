@@ -7,31 +7,6 @@ using System;
 public enum TowerGroup { Tanks, Group2 }
 public enum Tier { Tier1, Tier2, Tier3 }
 
-//public class TowerObs : MonoBehaviour
-//{
-//    [SerializeField, InlineButton("GenerateID")]
-//    private string id;
-//    [SerializeField]
-//    private string title;
-//    [SerializeField]
-//    private int cost;
-//    [SerializeField, EnumToggleButtons]
-//    private TowerGroup groupID;
-//    [SerializeField, EnumToggleButtons]
-//    private Tier tierID;
-
-//    public string ID { get => id; set => id = value; }
-//    public TowerGroup GroupID { get => groupID; set => groupID = value; }
-//    public Tier TierID { get => tierID; set => tierID = value; }
-
-//    private void GenerateID()
-//    {
-//        ID = System.Guid.NewGuid().ToString();
-//    }
-
-//}
-
-
 public static class GameObjectExtension
 {
     /// <summary>
