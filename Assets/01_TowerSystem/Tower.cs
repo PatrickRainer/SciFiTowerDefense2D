@@ -117,7 +117,7 @@ public class Tower : MonoBehaviour
 
         Vector3 direction = transform.position - nearestTarget.GetPosition();
         transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI, new Vector3(0, 0, 1));
-        transform.rotation *= Quaternion.Euler(0, 0, 90);
+        //transform.rotation *= Quaternion.Euler(0, 0, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
