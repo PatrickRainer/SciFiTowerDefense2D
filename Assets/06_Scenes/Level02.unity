@@ -6677,7 +6677,7 @@ MonoBehaviour:
       type: 3}
     spawnInterval: 1.5
     maxEnemies: 3
-  - enemyPrefab: {fileID: 6481754056633370493, guid: 5f6d9d2d536a8c845bae3bad90dee281,
+  - enemyPrefab: {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617,
       type: 3}
     spawnInterval: 1
     maxEnemies: 3
@@ -9691,11 +9691,6 @@ MonoBehaviour:
   coinsLabel: {fileID: 1322564301}
   healthLabel: {fileID: 74308213}
   waveLabel: {fileID: 1330776582}
-  healthIndicator:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   gameOverPanel: {fileID: 1957236131}
   gameWonPanel: {fileID: 1171754892}
 --- !u!4 &2051807019

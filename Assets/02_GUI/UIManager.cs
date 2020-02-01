@@ -16,8 +16,6 @@ public class UIManager : MonoBehaviour
     [SerializeField, SceneObjectsOnly]
     private TextMeshProUGUI waveLabel;
     [SerializeField]
-    private GameObject[] healthIndicator;
-    [SerializeField]
     private GameObject gameOverPanel;
     [SerializeField]
     private GameObject gameWonPanel;
@@ -52,7 +50,6 @@ public class UIManager : MonoBehaviour
         ShowCoins();
         ShowHealth();
         ShowWave();
-        SetHealthIndicator(LevelManager.PlayerHealth);
     }
 
     private void ShowCoins()
@@ -69,21 +66,5 @@ public class UIManager : MonoBehaviour
     {
         waveLabel.text = "Wave: " + LevelManager.GetWave().ToString();
     }
-
-    private void SetHealthIndicator(int health)
-    {
-        for (int i = 0; i < healthIndicator.Length; i++)
-        {
-            if (i < health)
-            {
-                healthIndicator[i].SetActive(true);
-            }
-            else
-            {
-                healthIndicator[i].SetActive(false);
-            }
-        }
-    }
-
-    
+   
 }
