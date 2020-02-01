@@ -20,8 +20,8 @@ public class Wave
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] waypoints;
+    [SerializeField, Required, SceneObjectsOnly]
+    private GameObject navMeshTarget;
     [SerializeField]
     private Wave[] waves;
     [SerializeField]
@@ -30,6 +30,7 @@ public class SpawnEnemy : MonoBehaviour
     private float lastSpawnTime;
     [SerializeField, ReadOnly]
     private int enemiesSpawned = 0;
+
 
     private void Start()
     {
@@ -53,7 +54,7 @@ public class SpawnEnemy : MonoBehaviour
                 lastSpawnTime = Time.time;
                 GameObject newEnemy = Instantiate(waves[currentWave].EnemyPrefab, transform);
                 Enemy neComp = newEnemy.GetComponent<Enemy>();
-                neComp.Waypoints = waypoints;
+                neComp.NavMeshTarget = navMeshTarget;
                 enemiesSpawned++;
             }
 

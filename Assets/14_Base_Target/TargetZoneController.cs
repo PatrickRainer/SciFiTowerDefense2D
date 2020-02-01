@@ -20,7 +20,7 @@ public class TargetZoneController : MonoBehaviour
 
         if (otherObj.tag == "Enemy")
         {
-            Debug.Log("Targetzone reached");
+            //Debug.Log("Targetzone reached");
             LevelManager.PlayerHealth -= 1;
             cameraShake.StartShake();
             Destroy(otherObj);
