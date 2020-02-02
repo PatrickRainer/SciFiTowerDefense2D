@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             EventManager.RaiseEnemyDestroyed();
+            Explode();
             Destroy(gameObject);
         }
     }
@@ -97,11 +98,6 @@ public class Enemy : MonoBehaviour
             Bullet bullet = other.gameObject.GetComponent<Bullet>();
             HitEnemy(bullet.Damage);
         }
-    }
-
-    private void OnDestroy()
-    {   
-        Explode();
     }
 
     private void Explode()
