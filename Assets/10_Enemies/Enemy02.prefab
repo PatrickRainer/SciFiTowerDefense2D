@@ -193,13 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a4556352d8bf047b795190e5e6a09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  lastWaypoint: {fileID: 0}
-  rotationRange: 0.4
   speed: 1
   health: 100
   rotationDuration: 0.5
+  navMeshTarget: {fileID: 0}
+  explosionPrefab: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: 039dab4020fae2546b1fccde90997294, type: 3}
 --- !u!58 &902018126465311431
 CircleCollider2D:
   m_ObjectHideFlags: 0
