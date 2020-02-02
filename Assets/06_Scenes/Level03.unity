@@ -5090,12 +5090,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2147147515}
-  m_RootOrder: 4
+  m_Father: {fileID: 861424014}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -267.99997, y: -139}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 31, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482911925
@@ -5977,9 +5977,20 @@ MonoBehaviour:
         CustomSortingLayer: Default
       Event:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: 
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       GameEvents:
-      - PauseGame
+      - 
       SoundData:
         SoundSource: 0
         DatabaseName: General
@@ -7389,7 +7400,7 @@ MonoBehaviour:
     LoadSelectedPresetAtRuntime: 0
     PresetCategory: 
     PresetName: 
-  TargetLabel: 2
+  TargetLabel: 0
   TextLabel: {fileID: 0}
   TextMeshProLabel: {fileID: 0}
 --- !u!114 &482911926
@@ -12676,7 +12687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038146973, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 29, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747663196
@@ -15263,7 +15274,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 482911924}
   m_Father: {fileID: 73771950}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18612,6 +18624,10 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
       type: 3}
     spawnInterval: 1.5
+    maxEnemies: 10
+  - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
+      type: 3}
+    spawnInterval: 1.2
     maxEnemies: 10
   timeBetweenWaves: 5
   lastSpawnTime: 0
@@ -45753,7 +45769,6 @@ RectTransform:
   - {fileID: 324859605}
   - {fileID: 1518247569}
   - {fileID: 926330795}
-  - {fileID: 482911924}
   m_Father: {fileID: 1145847115}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

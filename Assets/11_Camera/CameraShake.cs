@@ -31,7 +31,7 @@ public class CameraShake : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.IsGamePaused)
+        if (GameStatusManager.Status != GameStates.GameRuns)
         {
             shakeDuration = 0;
         }

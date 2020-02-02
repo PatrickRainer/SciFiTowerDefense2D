@@ -61,13 +61,15 @@ public class LevelManager : MonoBehaviour
         Message.RemoveListener<GameEventMessage>("EnemyDestroyed", OnEnemyDestroyed);
     }
 
-    public static int PlayerHealth { get => playerHealth;
+    public static int PlayerHealth
+    {
+        get => playerHealth;
         set
         {
             playerHealth = value;
             if (playerHealth <= 0)
             {
-                EventManager.RaiseGameOverEvent();
+                GameStatusManager.Status = GameStates.GameLost;
             }
         }
     }

@@ -69,7 +69,7 @@ public class SpawnEnemy : MonoBehaviour
         }
         else
         {
-            EventManager.RaiseGameWonEvent();           
+            GameStatusManager.Status = GameStates.GameWon;
         }
     }
 
