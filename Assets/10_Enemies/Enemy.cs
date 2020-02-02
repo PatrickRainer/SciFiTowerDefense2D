@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     private float rotationDuration = 0.5f;
     [SerializeField]
     private GameObject navMeshTarget;
+    [SerializeField]
+    private GameObject explosionPrefab;
 
     private NavMeshAgent2D navMeshAgent2D;
     private CameraShake cameraShake;
@@ -80,7 +82,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-       public void HitEnemy(int damage)
+    public void HitEnemy(int damage)
     {
         SetHealth(GetHealth() - damage);
     }
@@ -93,6 +95,15 @@ public class Enemy : MonoBehaviour
             Bullet bullet = other.gameObject.GetComponent<Bullet>();
             HitEnemy(bullet.Damage);
         }
+    }
+
+    private void OnDestroy()
+    {
+
+       
+        if (explosionPrefab == null) { return; }
+        Debug.Log("ondestroy");
+        Instantiate(explosionPrefab, gameObject.GetPosition(),Quaternion.identity);
     }
 
 
