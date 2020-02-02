@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     private GameObject navMeshTarget;
     [SerializeField]
     private GameObject explosionPrefab;
+    [SerializeField]
+    private AudioClip explosionSound;
 
     private NavMeshAgent2D navMeshAgent2D;
     private CameraShake cameraShake;
@@ -98,30 +100,15 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnDestroy()
-    {
-
-       
-        if (explosionPrefab == null) { return; }
-        Debug.Log("ondestroy");
-        Instantiate(explosionPrefab, gameObject.GetPosition(),Quaternion.identity);
+    {   
+        Explode();
     }
 
+    private void Explode()
+    {
+        if (explosionPrefab == null) { return; }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Instantiate(explosionPrefab, gameObject.GetPosition(), Quaternion.identity);
+        AudioSource.PlayClipAtPoint(explosionSound, gameObject.GetPosition());
+    }
 }

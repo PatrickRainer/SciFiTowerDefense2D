@@ -97,9 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 30
+  bulletSound: {fileID: 8300000, guid: 10ea410eff454504989f8078dac23fad, type: 3}
   target: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
+  worldPosition: {x: 0, y: 0, z: 0}
 --- !u!70 &171331730958833283
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

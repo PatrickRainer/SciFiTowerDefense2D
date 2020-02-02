@@ -24,7 +24,6 @@ static class ExtensionMethods
             Mathf.Round(vector3.y * multiplier) / multiplier,
             Mathf.Round(vector3.z * multiplier) / multiplier);
     }
-
 }
 
 
@@ -36,6 +35,8 @@ public class Bullet : MonoBehaviour
     private float speed = 10;
     [SerializeField]
     private int damage;
+    [SerializeField]
+    private AudioClip bulletSound;
 
     [HorizontalGroup("Base")]
     [VerticalGroup("Base/Left")]
@@ -63,6 +64,7 @@ public class Bullet : MonoBehaviour
     {
         startTime = Time.time;
         distance = Vector2.Distance(TargetPosition, StartPosition);
+        AudioSource.PlayClipAtPoint(bulletSound, gameObject.GetPosition());
     }
 
     private void Update()
