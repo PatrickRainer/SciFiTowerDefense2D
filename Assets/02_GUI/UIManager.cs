@@ -19,11 +19,20 @@ public class UIManager : MonoBehaviour
     private GameObject gameOverPanel;
     [SerializeField]
     private GameObject gameWonPanel;
+    [SerializeField]
+    private GameObject gameHUD;
+
+    private void Start()
+    {
+        gameHUD.SetActive(true);
+        gameOverPanel.SetActive(false);
+        gameWonPanel.SetActive(false);        
+    }
 
     private void OnEnable()
     {
         // Event Listneners
-        Message.AddListener<GameEventMessage>("GameOver", ShowGameOverPanel);
+        Message.AddListener<GameEventMessage>("GameOver", OnGameOver);
         Message.AddListener<GameEventMessage>("GameWon", OnGameWon);
     }
 
@@ -35,14 +44,32 @@ public class UIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        Message.RemoveListener<GameEventMessage>("GameOver", ShowGameOverPanel);
+        Message.RemoveListener<GameEventMessage>("GameOver", OnGameOver);
         Message.RemoveListener<GameEventMessage>("GameWon", OnGameWon);
     }
 
-    private void ShowGameOverPanel(GameEventMessage message)
+    private void OnGameOver(GameEventMessage message)
+    {
+        ShowGameOverPanel();      
+    }
+
+    private void ShowGameOverPanel()
     {
         gameOverPanel.SetActive(true);
+        HideGameHUD();
         GameManager.PauseGame();
+    }
+
+    private void ShowGameWonPanel()
+    {
+        gameWonPanel.SetActive(true);
+        HideGameHUD();
+        GameManager.PauseGame();
+    }
+
+    private void HideGameHUD()
+    {
+        gameHUD.SetActive(false);
     }
    
     private void OnGUI()
