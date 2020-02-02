@@ -21,12 +21,15 @@ public class UIManager : MonoBehaviour
     private GameObject gameWonPanel;
     [SerializeField]
     private GameObject gameHUD;
+    [SerializeField]
+    private GameObject pausePanel;
 
     private void Start()
     {
         gameHUD.SetActive(true);
         gameOverPanel.SetActive(false);
-        gameWonPanel.SetActive(false);        
+        gameWonPanel.SetActive(false);
+        pausePanel.SetActive(false);
     }
 
     private void OnEnable()
@@ -34,18 +37,41 @@ public class UIManager : MonoBehaviour
         // Event Listneners
         Message.AddListener<GameEventMessage>("GameOver", OnGameOver);
         Message.AddListener<GameEventMessage>("GameWon", OnGameWon);
+        Message.AddListener<GameEventMessage>("PauseGame", OnGamePause);
+        Message.AddListener<GameEventMessage>("UnPauseGame", OnUnPauseGame);
+    }
+       
+    private void OnDisable()
+    {
+        Message.RemoveListener<GameEventMessage>("GameOver", OnGameOver);
+        Message.RemoveListener<GameEventMessage>("GameWon", OnGameWon);
+        Message.RemoveListener<GameEventMessage>("PauseGame", OnGamePause);
+        Message.AddListener<GameEventMessage>("UnPauseGame", OnUnPauseGame);
+    }
+
+    private void OnGamePause(GameEventMessage obj)
+    {
+        ShowPausePanel();
+    }
+
+    private void OnUnPauseGame(GameEventMessage obj)
+    {
+        HidePausePanel();
+    }
+
+    private void HidePausePanel()
+    {
+        pausePanel.SetActive(false);
+    }
+
+    private void ShowPausePanel()
+    {
+        pausePanel.SetActive(true);
     }
 
     private void OnGameWon(GameEventMessage obj)
     {
         gameWonPanel.SetActive(true);
-        GameManager.PauseGame();
-    }
-
-    private void OnDisable()
-    {
-        Message.RemoveListener<GameEventMessage>("GameOver", OnGameOver);
-        Message.RemoveListener<GameEventMessage>("GameWon", OnGameWon);
     }
 
     private void OnGameOver(GameEventMessage message)
@@ -57,14 +83,14 @@ public class UIManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         HideGameHUD();
-        GameManager.PauseGame();
+        GameEventMessage.SendEvent("PauseGame");
     }
 
     private void ShowGameWonPanel()
     {
         gameWonPanel.SetActive(true);
         HideGameHUD();
-        GameManager.PauseGame();
+        GameEventMessage.SendEvent("PauseGame");
     }
 
     private void HideGameHUD()

@@ -17,9 +17,21 @@ public class EventManager : MonoBehaviour
         GameEventMessage.SendEvent("GameWon");
     }
 
+    public static void RaisePauseGame()
+    {
+        GameEventMessage.SendEvent("PauseGame");
+    }
+
+    public static void RaiseUnPauseGame()
+    {
+        GameEventMessage.SendEvent("UnPauseGame");
+    }
+
     public static void RaiseEnemyDestroyed()
     {
         GameEventMessage.SendEvent("EnemyDestroyed");
     }
+
+
 
 }
