@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
+using DG.Tweening;
 
 public enum TowerGroup { Tanks, Group2 }
 public enum Tier { Tier1, Tier2, Tier3 }
@@ -121,8 +122,10 @@ public class Tower : MonoBehaviour
         }
 
         Vector3 direction = transform.position - nearestTarget.GetPosition();
-        transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI, new Vector3(0, 0, 1));
-        //transform.rotation *= Quaternion.Euler(0, 0, 0);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.position, nearestTarget.GetPosition() - transform.position), Time.deltaTime*10);
+
+        //transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI, new Vector3(0, 0, 1));
+        //transform.rotation *= Quaternion.Euler(0, 0, 0); // Would add some additional rotation if necessary
     }
 
     private void OnTriggerEnter2D(Collider2D other)
