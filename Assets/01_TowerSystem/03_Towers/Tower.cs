@@ -39,6 +39,8 @@ public class Tower : MonoBehaviour
     private float fireRate = 1;
     [SerializeField]
     private float fireRange = 3;
+    [SerializeField]
+    private float turnRate = 25f;
     [SerializeField, ReadOnly]
     private TowerSpot myTowerSpot;
 
@@ -72,28 +74,28 @@ public class Tower : MonoBehaviour
     private void Update()
     {
         targetToShoot = GetNearestEnemyToTargetZone();
-        RotateTowerToNearestTarget();
+        RotateTower();
         Shoot(targetToShoot);
     }
 
-    private GameObject GetNearestEnemyToTower()
-    {
-        GameObject nearestEnemy = null;
-        float minimalEnemyDistance = float.MaxValue;
-        float distanceBetweenEnemy = 0;
+    //private GameObject GetNearestEnemyToTower()
+    //{
+    //    GameObject nearestEnemy = null;
+    //    float minimalEnemyDistance = float.MaxValue;
+    //    float distanceBetweenEnemy = 0;
 
-        foreach (GameObject enemy in enemiesInRange)
-        {
-            distanceBetweenEnemy = Vector2.Distance(enemy.GetPosition(), gameObject.GetPosition());
+    //    foreach (GameObject enemy in enemiesInRange)
+    //    {
+    //        distanceBetweenEnemy = Vector2.Distance(enemy.GetPosition(), gameObject.GetPosition());
 
-            if (distanceBetweenEnemy < minimalEnemyDistance)
-            {
-                nearestEnemy = enemy;
-                minimalEnemyDistance = distanceBetweenEnemy;
-            }
-        }
-        return nearestEnemy;
-    }
+    //        if (distanceBetweenEnemy < minimalEnemyDistance)
+    //        {
+    //            nearestEnemy = enemy;
+    //            minimalEnemyDistance = distanceBetweenEnemy;
+    //        }
+    //    }
+    //    return nearestEnemy;
+    //}
 
     private GameObject GetNearestEnemyToTargetZone()
     {
@@ -136,18 +138,14 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private void RotateTowerToNearestTarget()
+    private void RotateTower()
     {
         if (targetToShoot == null)
         {
             return;
         }
 
-        Vector3 direction = transform.position - targetToShoot.GetPosition();
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.position, targetToShoot.GetPosition() - transform.position), Time.deltaTime*10);
-
-        //transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI, new Vector3(0, 0, 1));
-        //transform.rotation *= Quaternion.Euler(0, 0, 0); // Would add some additional rotation if necessary
+        transform.right = Vector3.Slerp(transform.right, (targetToShoot.GetPosition() - transform.position), Time.deltaTime * turnRate);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
