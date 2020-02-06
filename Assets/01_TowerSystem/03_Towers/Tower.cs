@@ -37,14 +37,16 @@ public class Tower : MonoBehaviour
     private GameObject bullet;
     [SerializeField]
     private float fireRate = 1;
+    [SerializeField]
+    private float fireRange = 3;
     [SerializeField, ReadOnly]
     private TowerSpot myTowerSpot;
 
     [SerializeField, ReadOnly, SceneObjectsOnly]
     private List<GameObject> enemiesInRange = new List<GameObject>();
     private float lastShotTime;
-    //private Tower myTower;
-    private GameObject nearestTarget;
+    private GameObject targetZone;
+    private GameObject targetToShoot;
 
 
     public string ID { get => id; set => id = value; }
@@ -58,6 +60,8 @@ public class Tower : MonoBehaviour
     {
         myTowerSpot = GetComponentInParent<TowerSpot>();
         lastShotTime = Time.time;
+        GetComponent<CircleCollider2D>().radius = fireRange;
+        targetZone = GameObject.FindObjectOfType<TargetZoneController>().gameObject;
     }
 
     private void GenerateID()
@@ -67,14 +71,14 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
-        SetNearestTarget();
+        targetToShoot = GetNearestEnemyToTargetZone();
         RotateTowerToNearestTarget();
-        Shoot(nearestTarget);
+        Shoot(targetToShoot);
     }
 
-    private void SetNearestTarget()
+    private GameObject GetNearestEnemyToTower()
     {
-        nearestTarget = null;
+        GameObject nearestEnemy = null;
         float minimalEnemyDistance = float.MaxValue;
         float distanceBetweenEnemy = 0;
 
@@ -82,15 +86,33 @@ public class Tower : MonoBehaviour
         {
             distanceBetweenEnemy = Vector2.Distance(enemy.GetPosition(), gameObject.GetPosition());
 
-            // This would set the enemy which is nearest to the targetzone
-            //float distanceToGoal = enemy.GetComponent<Enemy>().GetDistanceToEndGoal();
-
             if (distanceBetweenEnemy < minimalEnemyDistance)
             {
-                nearestTarget = enemy;
+                nearestEnemy = enemy;
                 minimalEnemyDistance = distanceBetweenEnemy;
             }
         }
+        return nearestEnemy;
+    }
+
+    private GameObject GetNearestEnemyToTargetZone()
+    {
+        GameObject nearest = null;
+        float minimalEnemyDistance = float.MaxValue;
+        float distanceBetweenEnemy = 0;
+
+        foreach (GameObject enemy in enemiesInRange)
+        {
+            float distanceToTargetZone = Vector2.Distance(targetZone.GetPosition(), enemy.GetPosition());
+
+            if (distanceToTargetZone < minimalEnemyDistance)
+            {
+                nearest = enemy;
+                minimalEnemyDistance = distanceBetweenEnemy;
+            }
+        }
+
+        return nearest;
     }
 
     private void Shoot(GameObject target)
@@ -116,13 +138,13 @@ public class Tower : MonoBehaviour
 
     private void RotateTowerToNearestTarget()
     {
-        if (nearestTarget == null)
+        if (targetToShoot == null)
         {
             return;
         }
 
-        Vector3 direction = transform.position - nearestTarget.GetPosition();
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.position, nearestTarget.GetPosition() - transform.position), Time.deltaTime*10);
+        Vector3 direction = transform.position - targetToShoot.GetPosition();
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.position, targetToShoot.GetPosition() - transform.position), Time.deltaTime*10);
 
         //transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI, new Vector3(0, 0, 1));
         //transform.rotation *= Quaternion.Euler(0, 0, 0); // Would add some additional rotation if necessary
