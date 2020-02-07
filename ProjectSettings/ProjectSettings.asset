@@ -609,6 +609,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Build: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -629,10 +630,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 88732802-f870-436c-8d98-c6a3c5173d27
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Sci Fi Tower Defense 2D
+  organizationId: patrick_rainer
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
