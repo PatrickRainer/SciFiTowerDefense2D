@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: _SoundyDatabase
   m_EditorClassIdentifier: 
   DatabaseNames:
+  - ButtonClicks
   - General
+  - MenuSlides
   SoundDatabases:
   - {fileID: 11400000, guid: 0e7b92eda75b39d4796d8f80b934877b, type: 2}
+  - {fileID: 11400000, guid: 254e66f239d32ab4ea2d2cb468fa2439, type: 2}
+  - {fileID: 11400000, guid: 574e507cdd04a6941be1087e39e978de, type: 2}

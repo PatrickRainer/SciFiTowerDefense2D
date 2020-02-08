@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        gameHUD.SetActive(true);
+        //gameHUD.SetActive(true);
         gameOverPanel.SetActive(false);
         gameWonPanel.SetActive(false);
         pausePanel.SetActive(false);
