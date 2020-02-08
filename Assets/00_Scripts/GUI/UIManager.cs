@@ -16,47 +16,44 @@ public class UIManager : MonoBehaviour
     [SerializeField, SceneObjectsOnly]
     private TextMeshProUGUI waveLabel;
     [SerializeField]
-    private GameObject gameOverPanel;
+    private UIView gameOverPanel;
     [SerializeField]
-    private GameObject gameWonPanel;
+    private UIView gameWonPanel;
     [SerializeField]
-    private GameObject gameHUD;
+    private UIView gameHUD;
     [SerializeField, Required]
     private UIView pausePanel;
 
     private void Start()
     {
-        //gameHUD.SetActive(true);
-        gameOverPanel.SetActive(false);
-        gameWonPanel.SetActive(false);
-        pausePanel.Hide();
+
     }
 
     private void Update()
     {
         if (GameStatusManager.Status == GameStates.GameLost)
         {
-            gameOverPanel.SetActive(true);
-            gameHUD.SetActive(false);
+            gameOverPanel.Show();
+            gameHUD.Hide();
         }
 
         if (GameStatusManager.Status == GameStates.GameWon)
         {
-            gameWonPanel.SetActive(true);
-            gameHUD.SetActive(false);
+            gameWonPanel.Show();
+            gameHUD.Hide();
         }
 
         if (GameStatusManager.Status == GameStates.GamePaused)
         {
             pausePanel.Show();
-            gameHUD.SetActive(false);
+            gameHUD.Hide();
         }
 
         if (GameStatusManager.Status == GameStates.GameRuns)
         {
-            gameHUD.SetActive(true);
-            gameOverPanel.SetActive(false);
-            gameWonPanel.SetActive(false);
+            gameHUD.Show();
+            gameOverPanel.Hide();
+            gameWonPanel.Hide();
             pausePanel.Hide();
         }
     }
