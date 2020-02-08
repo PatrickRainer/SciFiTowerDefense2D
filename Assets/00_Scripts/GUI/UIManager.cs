@@ -21,101 +21,84 @@ public class UIManager : MonoBehaviour
     private GameObject gameWonPanel;
     [SerializeField]
     private GameObject gameHUD;
-    [SerializeField]
-    private GameObject pausePanel;
+    [SerializeField, Required]
+    private UIView pausePanel;
 
     private void Start()
     {
         //gameHUD.SetActive(true);
         gameOverPanel.SetActive(false);
         gameWonPanel.SetActive(false);
-        pausePanel.SetActive(false);
+        pausePanel.Hide();
     }
-
-    //private void OnEnable()
-    //{
-    //    // Event Listneners
-    //    Message.AddListener<GameEventMessage>("GameOver", OnGameOver);
-    //    Message.AddListener<GameEventMessage>("GameWon", OnGameWon);
-    //    Message.AddListener<GameEventMessage>("PauseGame", OnGamePause);
-    //    Message.AddListener<GameEventMessage>("UnPauseGame", OnUnPauseGame);
-    //}
-
-    //private void OnDisable()
-    //{
-    //    Message.RemoveListener<GameEventMessage>("GameOver", OnGameOver);
-    //    Message.RemoveListener<GameEventMessage>("GameWon", OnGameWon);
-    //    Message.RemoveListener<GameEventMessage>("PauseGame", OnGamePause);
-    //    Message.AddListener<GameEventMessage>("UnPauseGame", OnUnPauseGame);
-    //}
-
-    //private void OnGamePause(GameEventMessage obj)
-    //{
-    //    ShowPausePanel();
-    //}
-
-    //private void OnUnPauseGame(GameEventMessage obj)
-    //{
-    //    HidePausePanel();
-    //}
-
-    //private void OnGameWon(GameEventMessage obj)
-    //{
-    //    gameWonPanel.SetActive(true);
-    //}
-
-    //private void OnGameOver(GameEventMessage message)
-    //{
-    //    ShowGameOverPanel();
-    //}
 
     private void Update()
     {
         if (GameStatusManager.Status == GameStates.GameLost)
         {
-            ShowGameOverPanel();
+            gameOverPanel.SetActive(true);
+            gameHUD.SetActive(false);
         }
 
         if (GameStatusManager.Status == GameStates.GameWon)
         {
-            ShowGameWonPanel();
+            gameWonPanel.SetActive(true);
+            gameHUD.SetActive(false);
         }
 
         if (GameStatusManager.Status == GameStates.GamePaused)
         {
-            ShowPausePanel();
+            pausePanel.Show();
+            gameHUD.SetActive(false);
+        }
+
+        if (GameStatusManager.Status == GameStates.GameRuns)
+        {
+            gameHUD.SetActive(true);
+            gameOverPanel.SetActive(false);
+            gameWonPanel.SetActive(false);
+            pausePanel.Hide();
         }
     }
 
-    private void HidePausePanel()
-    {
-        pausePanel.SetActive(false);
-    }
+    //private void HidePausePanel()
+    //{
+    //    pausePanel.SetActive(false);
+    //}
 
-    private void ShowPausePanel()
-    {
-        pausePanel.SetActive(true);
-        HideGameHUD();
-    }
+    //private void ShowPausePanel()
+    //{
+    //    pausePanel.SetActive(true);
+    //    HideGameHUD();
+    //}
 
+    //private void ShowGameOverPanel()
+    //{
+    //    gameOverPanel.SetActive(true);
+    //    HideGameHUD();
+    //}
 
-    private void ShowGameOverPanel()
-    {
-        gameOverPanel.SetActive(true);
-        HideGameHUD();
-    }
+    //private void HideGameOverPanel()
+    //{
+    //    gameOverPanel.SetActive(true);
+    //}
 
-    private void ShowGameWonPanel()
-    {
-        gameWonPanel.SetActive(true);
-        HideGameHUD();
-    }
+    //private void ShowGameWonPanel()
+    //{
+    //    gameWonPanel.SetActive(true);
+    //    HideGameHUD();
+    //}
 
-    private void HideGameHUD()
-    {
-        gameHUD.SetActive(false);
-    }
-   
+    //private void HideGameHUD()
+    //{
+    //    gameHUD.SetActive(false);
+    //}
+
+    //private void ShowGameHUD()
+    //{
+    //    gameHUD.SetActive(true);
+    //}
+
     private void OnGUI()
     {
         ShowCoins();

@@ -16,17 +16,21 @@ public class GameStatusManager : MonoBehaviour
     {
         if (Status == GameStates.GameLost || Status == GameStates.GameWon || Status == GameStates.GamePaused)
         {
-            PauseGame();
+            SetTimeScalePausing();
+        }
+        else if (Status == GameStates.GameRuns)
+        {
+            SetTimeScaleRunning();
         }
     }
 
-    private void UnPauseGame()
+    private void SetTimeScaleRunning()
     {
         Time.timeScale = 1;
         //Debug.Log(isGamePaused);
     }
 
-    private void PauseGame()
+    private void SetTimeScalePausing()
     {
         Time.timeScale = 0;
         //Debug.Log(isGamePaused);
