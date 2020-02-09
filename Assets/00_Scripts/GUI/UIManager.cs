@@ -54,44 +54,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    //private void HidePausePanel()
-    //{
-    //    pausePanel.SetActive(false);
-    //}
-
-    //private void ShowPausePanel()
-    //{
-    //    pausePanel.SetActive(true);
-    //    HideGameHUD();
-    //}
-
-    //private void ShowGameOverPanel()
-    //{
-    //    gameOverPanel.SetActive(true);
-    //    HideGameHUD();
-    //}
-
-    //private void HideGameOverPanel()
-    //{
-    //    gameOverPanel.SetActive(true);
-    //}
-
-    //private void ShowGameWonPanel()
-    //{
-    //    gameWonPanel.SetActive(true);
-    //    HideGameHUD();
-    //}
-
-    //private void HideGameHUD()
-    //{
-    //    gameHUD.SetActive(false);
-    //}
-
-    //private void ShowGameHUD()
-    //{
-    //    gameHUD.SetActive(true);
-    //}
-
     private void OnGUI()
     {
         ShowCoins();
