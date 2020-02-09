@@ -227,7 +227,7 @@ Transform:
   m_Children:
   - {fileID: 2015643452}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &100719397 stripped
 Transform:
@@ -741,7 +741,7 @@ Transform:
   - {fileID: 1435962832}
   - {fileID: 1564121581}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &297560606
 PrefabInstance:
@@ -1506,7 +1506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &527068613
 GameObject:
@@ -7372,7 +7372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &903863769
 PrefabInstance:
@@ -7463,7 +7463,7 @@ GameObject:
   - component: {fileID: 1009009784}
   - component: {fileID: 1009009783}
   m_Layer: 0
-  m_Name: UIButton
+  m_Name: Button - Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7506,8 +7506,8 @@ MonoBehaviour:
   StartScale: {x: 1, y: 1, z: 1}
   StartAlpha: 1
   AllowMultipleClicks: 1
-  ButtonCategory: General
-  ButtonName: Unnamed
+  ButtonCategory: Custom
+  ButtonName: Menu
   ClickMode: 0
   DeselectButtonAfterClick: 0
   DisableButtonBetweenClicksInterval: 0.2
@@ -10167,7 +10167,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1069818889
 GameObject:
@@ -10251,7 +10251,7 @@ Transform:
   - {fileID: 256641975}
   - {fileID: 2115643415}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1080359547
 GameObject:
@@ -10286,13 +10286,9 @@ MonoBehaviour:
   waves:
   - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
       type: 3}
-    spawnInterval: 1.5
-    maxEnemies: 10
-  - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
-      type: 3}
-    spawnInterval: 1.2
-    maxEnemies: 10
-  timeBetweenWaves: 5
+    spawnInterval: 0.5
+    maxEnemies: 1
+  timeBetweenWaves: 1
   lastSpawnTime: 0
   enemiesSpawned: 0
 --- !u!4 &1080359549
@@ -10307,7 +10303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1096953925
 PrefabInstance:
@@ -10731,7 +10727,7 @@ RectTransform:
   - {fileID: 1230007076}
   - {fileID: 1662172134}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10842,7 +10838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -924, y: 569}
+  m_AnchoredPosition: {x: -929, y: 569}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171754894
@@ -10894,7 +10890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugMode: 0
-  StartPosition: {x: -886, y: 569, z: 0}
+  StartPosition: {x: -924, y: 569, z: 0}
   StartRotation: {x: -0, y: 0, z: 0}
   StartScale: {x: 1, y: 1, z: 1}
   StartAlpha: 1
@@ -11771,49 +11767,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1594778798}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1222596337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1222596338}
-  - component: {fileID: 1222596339}
-  m_Layer: 0
-  m_Name: GameStatusManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1222596338
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222596337}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1222596339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222596337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2b414c907972846bde38c10a9b4610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1230007075
 GameObject:
   m_ObjectHideFlags: 0
@@ -12749,7 +12702,7 @@ Transform:
   - {fileID: 485874214}
   - {fileID: 297560607}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1241310996
 GameObject:
@@ -20199,7 +20152,7 @@ Transform:
   m_LocalScale: {x: 2.266956, y: 2.2867432, z: 1.6326}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1571808461
 PrefabInstance:
@@ -20803,7 +20756,7 @@ GameObject:
   - component: {fileID: 1662172136}
   - component: {fileID: 1662172135}
   m_Layer: 0
-  m_Name: UIView - HUD (1)
+  m_Name: UIView - HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21667,7 +21620,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799316624
 GameObject:
@@ -21710,7 +21663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1810948318
 PrefabInstance:

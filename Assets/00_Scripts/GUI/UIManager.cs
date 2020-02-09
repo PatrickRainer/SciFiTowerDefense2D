@@ -9,25 +9,21 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField, SceneObjectsOnly]
+    [SerializeField, SceneObjectsOnly, BoxGroup("Labels")]
     private TextMeshProUGUI coinsLabel;
-    [SerializeField, SceneObjectsOnly]
+    [SerializeField, SceneObjectsOnly, BoxGroup("Labels")]
     private TextMeshProUGUI healthLabel;
-    [SerializeField, SceneObjectsOnly]
+    [SerializeField, SceneObjectsOnly, BoxGroup("Labels")]
     private TextMeshProUGUI waveLabel;
-    [SerializeField]
+
+    [SerializeField, BoxGroup("Panels")]
     private UIView gameOverPanel;
-    [SerializeField]
+    [SerializeField, BoxGroup("Panels")]
     private UIView gameWonPanel;
-    [SerializeField]
+    [SerializeField, BoxGroup("Panels")]
     private UIView gameHUD;
-    [SerializeField, Required]
+    [SerializeField, BoxGroup("Panels")]
     private UIView pausePanel;
-
-    private void Start()
-    {
-
-    }
 
     private void Update()
     {

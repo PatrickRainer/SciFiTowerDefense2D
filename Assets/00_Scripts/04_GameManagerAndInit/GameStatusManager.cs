@@ -9,31 +9,18 @@ public enum GameStates { GameLost, GameWon, GamePaused, GameRuns }
 
 public class GameStatusManager : MonoBehaviour
 {
-    [ShowInInspector, ReadOnly]
+    [ShowInInspector]
     public static GameStates Status = GameStates.GameRuns;
 
     private void Update()
     {
         if (Status == GameStates.GameLost || Status == GameStates.GameWon || Status == GameStates.GamePaused)
         {
-            SetTimeScalePausing();
+            Time.timeScale = 0;
         }
         else if (Status == GameStates.GameRuns)
         {
-            SetTimeScaleRunning();
+            Time.timeScale = 1;
         }
     }
-
-    private void SetTimeScaleRunning()
-    {
-        Time.timeScale = 1;
-        //Debug.Log(isGamePaused);
-    }
-
-    private void SetTimeScalePausing()
-    {
-        Time.timeScale = 0;
-        //Debug.Log(isGamePaused);
-    }
-
 }

@@ -8,18 +8,7 @@ using DG.Tweening;
 public enum TowerGroup { Tanks, Group2 }
 public enum Tier { Tier1, Tier2, Tier3 }
 
-public static class GameObjectExtension
-{
-    /// <summary>
-    /// Returns the World Position of the gameObject
-    /// </summary>
-    /// <param name="go"></param>
-    /// <returns></returns>
-    public static Vector3 GetPosition(this GameObject go)
-    {
-        return go.transform.position;
-    }
-}
+
 
 public class Tower : MonoBehaviour
 {
