@@ -10,6 +10,6 @@ public class LevelInit : MonoBehaviour
     private void Start()
     {
         //levelUI.SetActive(true);
-        GameStatusManager.Status = GameStates.GameRuns;
+        GameStatusManager.SetStatus(GameStates.GameRuns, this);
     }
 }

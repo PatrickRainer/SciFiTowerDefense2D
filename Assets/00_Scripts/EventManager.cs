@@ -14,12 +14,12 @@ public class EventManager : MonoBehaviour
 
     public void PauseGame()
     {
-        GameStatusManager.Status = GameStates.GamePaused;
+        GameStatusManager.SetStatus(GameStates.GamePaused, this);
     }
 
     public void UnPauseGame()
     {
-        GameStatusManager.Status = GameStates.GameRuns;
+        GameStatusManager.SetStatus(GameStates.GameRuns, this);
     }
 
     public void RestartLevel()

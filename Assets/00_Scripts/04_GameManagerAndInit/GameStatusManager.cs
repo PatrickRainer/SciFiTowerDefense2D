@@ -10,7 +10,14 @@ public enum GameStates { GameLost, GameWon, GamePaused, GameRuns }
 public class GameStatusManager : MonoBehaviour
 {
     [ShowInInspector]
-    public static GameStates Status = GameStates.GameRuns;
+    private static GameStates status = GameStates.GameRuns;
+    public static GameStates Status { get => status;}
+    public static void SetStatus(GameStates _status, MonoBehaviour sender)
+    {
+        status = _status;
+        Debug.Log("GameState changed to: " + _status + " by: " + sender.name);
+    }
+
 
     private void Update()
     {

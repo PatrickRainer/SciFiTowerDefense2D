@@ -16,6 +16,7 @@ public class Wave
     public float SpawnInterval { get => spawnInterval;}
     public int MaxEnemies { get => maxEnemies;}
     public GameObject EnemyPrefab { get => enemyPrefab;}
+
 }
 
 public class SpawnEnemy : MonoBehaviour
@@ -31,6 +32,10 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField, ReadOnly]
     private int enemiesSpawned = 0;
 
+    [SerializeField, ReadOnly, Header("Debug Observers")]
+    private int currentWave;
+    [SerializeField, ReadOnly]
+    private int wavesLength;
 
     private void Start()
     {
@@ -39,10 +44,13 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Update()
     {
-        int currentWave = LevelManager.GetWave();
+        wavesLength = waves.Length; // Only used for Debug reasons
 
+        currentWave = LevelManager.GetWave();
+        
         if (currentWave < waves.Length)
         {
+
             float timeInterval = Time.time - lastSpawnTime;
             float spawnInterval = waves[currentWave].SpawnInterval;
 
@@ -69,7 +77,8 @@ public class SpawnEnemy : MonoBehaviour
         }
         else
         {
-            GameStatusManager.Status = GameStates.GameWon;
+            GameStatusManager.SetStatus(GameStates.GameWon, this);
+            this.gameObject.SetActive(false);
         }
     }
 

@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour
     {
         SetCoins(initialCoins);
         PlayerHealth = initialPlayerHealth;
+        SetWave(0);
     }
 
     private void OnEnable()
@@ -69,7 +70,8 @@ public class LevelManager : MonoBehaviour
             playerHealth = value;
             if (playerHealth <= 0)
             {
-                GameStatusManager.Status = GameStates.GameLost;
+                GameStatusManager.SetStatus(GameStates.GameLost, GameObject.FindObjectOfType<LevelManager>());
+                GameObject.FindObjectOfType<SpawnEnemy>().gameObject.SetActive(false);
             }
         }
     }
