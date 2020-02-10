@@ -9,7 +9,7 @@ public class LevelInit : MonoBehaviour
 
     private void Start()
     {
-        //levelUI.SetActive(true);
+        levelUI.SetActive(true);
         GameStatusManager.SetStatus(GameStates.GameRuns, this);
     }
 }
