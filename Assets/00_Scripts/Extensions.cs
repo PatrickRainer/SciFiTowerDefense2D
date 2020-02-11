@@ -15,6 +15,6 @@ public static class GameObjectExtension
     /// <returns></returns>
     public static Vector3 GetPosition(this GameObject go)
     {
-        return go.transform.position;
+         return go.transform.position;       //BUG: What to return if the game object does not exist anymore?
     }
 }
