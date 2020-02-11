@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 30
+  damage: 50
   bulletSound: {fileID: 8300000, guid: 93c27bbdfb4076d4294a1f870488c7d3, type: 3}
   target: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}

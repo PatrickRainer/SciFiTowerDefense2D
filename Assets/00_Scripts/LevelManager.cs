@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
     private static int playerHealth = 0;
     private static int wave = 0;
 
+    private LevelManager myInstance;
+
 
     public static int GetCoins()
     {
@@ -41,6 +43,18 @@ public class LevelManager : MonoBehaviour
     public static void SetWave(int value)
     {
         wave = value;
+    }
+
+    private void Awake()
+    {
+        if (myInstance == null)
+        {
+            myInstance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     private void Start()
