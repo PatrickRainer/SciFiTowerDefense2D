@@ -18,10 +18,14 @@ public class Tower : MonoBehaviour
     private string title;
     [SerializeField]
     private int cost;
-    [SerializeField, EnumToggleButtons]
+    [SerializeField]
     private int groupID;
-    [SerializeField, EnumToggleButtons]
+    [SerializeField]
     private int tierID;
+    [EnumToggleButtons, Required]
+    public TowerTypes type;
+    [Required, Range(0, 2)]
+    public int upgradeLevel;
     [SerializeField, AssetsOnly,Required]
     private GameObject bullet;
     [SerializeField]

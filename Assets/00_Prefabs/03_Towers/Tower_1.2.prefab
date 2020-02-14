@@ -99,6 +99,8 @@ MonoBehaviour:
   cost: 125
   groupID: 1
   tierID: 2
+  type: 0
+  upgradeLevel: 1
   bullet: {fileID: 1208232975702459398, guid: acd7d2e506eeeb949b3f0d948d960d9c, type: 3}
   fireRate: 0.6
   fireRange: 3
