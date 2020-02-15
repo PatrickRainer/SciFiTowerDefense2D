@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1741247609489541522}
   - component: {fileID: 3757641589637562443}
   m_Layer: 2
-  m_Name: Tower_2.3
+  m_Name: Atom3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,12 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcba60d847d0adc4b954437069454a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 7dfb373d-45fe-46a9-bd88-8da9ef90a58a
-  title: Plasma2.3
+  id: f43b513d-c2b7-4b9f-b7ed-06d74681aea5
+  title: Atom3.3
   cost: 100
   groupID: 1
   tierID: 1
-  type: 1
+  type: 2
   upgradeLevel: 2
   bullet: {fileID: 1208232975702459398, guid: acd7d2e506eeeb949b3f0d948d960d9c, type: 3}
   fireRate: 1

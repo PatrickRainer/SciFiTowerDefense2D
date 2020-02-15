@@ -1207,7 +1207,29 @@ MonoBehaviour:
         CustomSortingLayer: Default
       Event:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1558128040}
+            m_MethodName: PlaceAtomTower
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 497127854}
+            m_MethodName: HideAllMenus
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       GameEvents: []
       SoundData:
         SoundSource: 0
@@ -3646,7 +3668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 488968912}
   m_Layer: 0
-  m_Name: TowerSpotV2
+  m_Name: Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3681,9 +3703,8 @@ GameObject:
   m_Component:
   - component: {fileID: 497127855}
   - component: {fileID: 497127854}
-  - component: {fileID: 497127856}
   m_Layer: 0
-  m_Name: TowerMenuController
+  m_Name: SocketUIController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3698,7 +3719,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 497127853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 023e041d1ddb9db4196aae97dc44966e, type: 3}
+  m_Script: {fileID: 11500000, guid: 23e2a9e2c2f15bd42adf65a6508e2956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TowerSpotMenu: {fileID: 882951161}
@@ -3718,22 +3739,6 @@ Transform:
   m_Father: {fileID: 488968912}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &497127856
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 497127853}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -12214,7 +12219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsPerDestroyedEnemy: 50
-  initialCoins: 200
+  initialCoins: 1000
   initialPlayerHealth: 20
 --- !u!4 &1066652569
 Transform:
@@ -22205,7 +22210,7 @@ GameObject:
   - component: {fileID: 1558128039}
   - component: {fileID: 1558128040}
   m_Layer: 0
-  m_Name: TowerController
+  m_Name: SocketController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22232,7 +22237,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558128037}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -22250,11 +22255,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558128037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a2621c5369bfc47a6829513b3b5ad2, type: 3}
+  m_Script: {fileID: 11500000, guid: c1a057d49b1339b41be7909529e54034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIController: {fileID: 497127854}
+  laserProvider: {fileID: 11400000, guid: f566ba82e0415084a8df3fd61f8ddfb4, type: 2}
+  atomProvider: {fileID: 11400000, guid: 60636f9de59824d4c89f9374dd2cc757, type: 2}
+  flameProvider: {fileID: 11400000, guid: b246f8379f905c5468b34b85c8a886c0, type: 2}
   currentTower: {fileID: 0}
-  towerProvider: {fileID: 0}
 --- !u!4 &1564121581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8194128417954515055, guid: 802d4b34d89b0a84ea3dd0dfc37f61ff,
@@ -23104,7 +23112,7 @@ PrefabInstance:
     - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
         type: 3}
       propertyPath: OnClick.OnTrigger.Event.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
         type: 3}
@@ -23124,11 +23132,36 @@ PrefabInstance:
     - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
         type: 3}
       propertyPath: OnClick.OnTrigger.Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaceLaserTower
+      value: UpgradeTower
       objectReference: {fileID: 0}
     - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
         type: 3}
       propertyPath: OnClick.OnTrigger.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
+        type: 3}
+      propertyPath: OnClick.OnTrigger.Event.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
+        type: 3}
+      propertyPath: OnClick.OnTrigger.Event.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
+        type: 3}
+      propertyPath: OnClick.OnTrigger.Event.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 497127854}
+    - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
+        type: 3}
+      propertyPath: OnClick.OnTrigger.Event.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HideAllMenus
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251236413961048954, guid: 7a4e2b977e09c234bab43a65f0ff6291,
+        type: 3}
+      propertyPath: OnClick.OnTrigger.Event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -61220,7 +61253,7 @@ GameObject:
   - component: {fileID: 8333666650557041846}
   - component: {fileID: 8333666650557041847}
   m_Layer: 0
-  m_Name: Button - Plasma
+  m_Name: Button - Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61288,7 +61321,7 @@ MonoBehaviour:
   StartAlpha: 1
   AllowMultipleClicks: 1
   ButtonCategory: Custom
-  ButtonName: Plasma
+  ButtonName: Flame
   ClickMode: 0
   DeselectButtonAfterClick: 0
   DisableButtonBetweenClicksInterval: 0.2
@@ -62148,7 +62181,29 @@ MonoBehaviour:
         CustomSortingLayer: Default
       Event:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1558128040}
+            m_MethodName: PlaceFlameTower
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 497127854}
+            m_MethodName: HideAllMenus
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       GameEvents: []
       SoundData:
         SoundSource: 0

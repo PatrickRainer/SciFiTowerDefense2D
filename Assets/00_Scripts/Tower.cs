@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public enum TowerGroup { Tanks, Group2 }
 public enum Tier { Tier1, Tier2, Tier3 }
-public enum TowerTypes { Laser, Plasma, Atom}
+public enum TowerTypes { Laser, Flamer, Atom}
 
 
 public class Tower : MonoBehaviour
@@ -18,10 +18,6 @@ public class Tower : MonoBehaviour
     public string title;
     [SerializeField]
     private int cost;
-    [SerializeField]
-    private int groupID;
-    [SerializeField]
-    private int tierID;
     [EnumToggleButtons, Required]
     public TowerTypes type;
     [Required, Range(0, 2)]
@@ -35,7 +31,7 @@ public class Tower : MonoBehaviour
     [SerializeField]
     private float turnRate = 25f;
     [SerializeField, ReadOnly]
-    private TowerSpot myTowerSpot;
+    private SocketController myTowerSpot;
 
     [SerializeField, ReadOnly, SceneObjectsOnly]
     private List<GameObject> enemiesInRange = new List<GameObject>();
@@ -45,15 +41,13 @@ public class Tower : MonoBehaviour
 
 
     public string ID { get => id; set => id = value; }
-    public int GroupID { get => groupID; set => groupID = value; }
-    public int TierID { get => tierID; set => tierID = value; }
     public GameObject Bullet { get => bullet; set => bullet = value; }
     public float FireRate { get => fireRate; set => fireRate = value; }
     public int Cost { get => cost; set => cost = value; }
 
     private void Start()
     {
-        myTowerSpot = GetComponentInParent<TowerSpot>();
+        myTowerSpot = GetComponentInParent<SocketController>();
         lastShotTime = Time.time;
         GetComponent<CircleCollider2D>().radius = fireRange;
         targetZone = GameObject.FindObjectOfType<TargetZoneController>().gameObject;

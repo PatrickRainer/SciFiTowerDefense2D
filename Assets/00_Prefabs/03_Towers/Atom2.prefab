@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1741247609489541522}
   - component: {fileID: 3757641589637562443}
   m_Layer: 2
-  m_Name: Tower_2.1
+  m_Name: Atom2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 897b033ccfcf27c489bc0db919462db5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 115f60921134eed449da01283d01fd35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,13 +94,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcba60d847d0adc4b954437069454a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 11cf92c8-5f18-4b13-adcc-4acc511e39ae
-  title: Plasma2.1
+  id: dead4943-ad7b-40d3-808b-bd98ee98e157
+  title: Atom3.2
   cost: 100
   groupID: 1
   tierID: 1
-  type: 1
-  upgradeLevel: 0
+  type: 2
+  upgradeLevel: 1
   bullet: {fileID: 1208232975702459398, guid: acd7d2e506eeeb949b3f0d948d960d9c, type: 3}
   fireRate: 1
   fireRange: 3

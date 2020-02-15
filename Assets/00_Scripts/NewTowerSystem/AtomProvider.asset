@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac63f8800a901bb4faea5179f076ff7a, type: 3}
+  m_Name: AtomProvider
+  m_EditorClassIdentifier: 
+  towers:
+  - {fileID: 2162440734104741327, guid: 7e53d07fd045ebf4e9a4e66fa976aba3, type: 3}
+  - {fileID: 2162440734104741327, guid: f9fe2ce354c00004cbed8b5b3b9dc53b, type: 3}
+  - {fileID: 2162440734104741327, guid: 7f732d0db98a33d48bb6cc191d33bf07, type: 3}

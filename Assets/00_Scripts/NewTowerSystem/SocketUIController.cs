@@ -4,14 +4,14 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using Doozy.Engine.UI;
 
-public class TowerMenuController : MonoBehaviour
+public class SocketUIController : MonoBehaviour
 {
     [SerializeField, Required]
     private GameObject TowerSpotMenu;
     [SerializeField, Required]
     private GameObject UpgradeMenu;
     [SerializeField, Required]
-    private TowerSpotController myTowerSpot;
+    private SocketController myTowerSpot;
 
     private void OnMouseUp()
     {
