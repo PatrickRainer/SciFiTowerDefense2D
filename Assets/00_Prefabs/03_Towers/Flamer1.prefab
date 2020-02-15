@@ -97,8 +97,7 @@ MonoBehaviour:
   id: 11cf92c8-5f18-4b13-adcc-4acc511e39ae
   title: Plasma2.1
   cost: 100
-  groupID: 1
-  tierID: 1
+  resellPrice: 50
   type: 1
   upgradeLevel: 0
   bullet: {fileID: 1208232975702459398, guid: acd7d2e506eeeb949b3f0d948d960d9c, type: 3}

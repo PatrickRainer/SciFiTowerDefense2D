@@ -96,9 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: dead4943-ad7b-40d3-808b-bd98ee98e157
   title: Atom3.2
-  cost: 100
-  groupID: 1
-  tierID: 1
+  cost: 150
+  resellPrice: 75
   type: 2
   upgradeLevel: 1
   bullet: {fileID: 1208232975702459398, guid: acd7d2e506eeeb949b3f0d948d960d9c, type: 3}

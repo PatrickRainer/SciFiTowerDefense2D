@@ -97,8 +97,7 @@ MonoBehaviour:
   id: 603dded6-5433-4d28-9120-2500b00035fe
   title: Atom3.1
   cost: 100
-  groupID: 1
-  tierID: 1
+  resellPrice: 50
   type: 2
   upgradeLevel: 0
   bullet: {fileID: 1208232975702459398, guid: acd7d2e506eeeb949b3f0d948d960d9c, type: 3}

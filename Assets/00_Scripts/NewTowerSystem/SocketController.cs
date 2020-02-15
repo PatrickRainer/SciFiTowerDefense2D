@@ -88,6 +88,12 @@ public class SocketController : MonoBehaviour
         }
     }
 
+    public void SellTower()
+    {
+        LevelManager.SetCoins(LevelManager.GetCoins() + currentTower.GetComponent<Tower>().resellPrice);
+        Destroy(currentTower);
+    }
+
     private void PayTower(GameObject towerToPay)
     {
         Tower tow = towerToPay.GetComponent<Tower>();

@@ -18,6 +18,7 @@ public class Tower : MonoBehaviour
     public string title;
     [SerializeField]
     private int cost;
+    public int resellPrice;
     [EnumToggleButtons, Required]
     public TowerTypes type;
     [Required, Range(0, 2)]

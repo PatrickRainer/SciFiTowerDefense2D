@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1741247609489541522}
   - component: {fileID: 3757641589637562443}
   m_Layer: 2
-  m_Name: Tower_1.2
+  m_Name: Laser2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,9 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: b972c917-1c8c-42af-a359-ba446ed3a05e
   title: Laser1.2
-  cost: 125
-  groupID: 1
-  tierID: 2
+  cost: 150
+  resellPrice: 75
   type: 0
   upgradeLevel: 1
   bullet: {fileID: 1208232975702459398, guid: acd7d2e506eeeb949b3f0d948d960d9c, type: 3}

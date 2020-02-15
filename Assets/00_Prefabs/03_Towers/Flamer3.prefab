@@ -96,9 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7dfb373d-45fe-46a9-bd88-8da9ef90a58a
   title: Plasma2.3
-  cost: 100
-  groupID: 1
-  tierID: 1
+  cost: 200
+  resellPrice: 100
   type: 1
   upgradeLevel: 2
   bullet: {fileID: 1208232975702459398, guid: acd7d2e506eeeb949b3f0d948d960d9c, type: 3}
