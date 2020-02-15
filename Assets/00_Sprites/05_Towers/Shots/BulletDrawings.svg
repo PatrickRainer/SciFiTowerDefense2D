@@ -132,9 +132,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.2"
-     inkscape:cx="-103.28479"
-     inkscape:cy="500.0445"
+     inkscape:zoom="3.959798"
+     inkscape:cx="-94.12462"
+     inkscape:cy="488.01229"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -233,23 +233,32 @@ NgAAAABJRU5ErkJggg==
        cy="161.66089"
        r="0.70870525" />
     <circle
-       style="opacity:1;fill:#ff0000;fill-opacity:0.84951453;fill-rule:nonzero;stroke:none;stroke-width:0.15875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter4392)"
+       style="opacity:1;fill:#ff0000;fill-opacity:0.84951453;fill-rule:nonzero;stroke:none;stroke-width:0.17807426;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter4392)"
        id="path2982"
        cx="-30.651506"
        cy="167.67307"
-       r="1.8544457" />
+       r="1.8544457"
+       transform="matrix(0.90638628,0,0,0.87682293,-5.3329511,20.399505)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <circle
        r="1.8544457"
        cy="167.67307"
        cx="-25.076357"
        id="circle4396"
-       style="opacity:1;fill:#76e5f3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.15875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter4392)" />
+       style="opacity:1;fill:#76e5f3;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17807426;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter4392)"
+       transform="matrix(0.90638628,0,0,0.87682293,-5.3329511,20.399505)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <circle
-       style="opacity:1;fill:#57c740;fill-opacity:0.98431373;fill-rule:nonzero;stroke:none;stroke-width:0.15875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter4392)"
+       style="opacity:1;fill:#57c740;fill-opacity:0.98431373;fill-rule:nonzero;stroke:none;stroke-width:0.17807426;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;filter:url(#filter4392)"
        id="circle4398"
        cx="-18.934244"
        cy="167.67307"
-       r="1.8544457" />
+       r="1.8544457"
+       transform="matrix(0.90638628,0,0,0.87682293,-5.3329511,20.399505)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <image
        y="152.92964"
        x="-49.434559"

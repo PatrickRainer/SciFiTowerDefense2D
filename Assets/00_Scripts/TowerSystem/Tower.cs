@@ -28,7 +28,7 @@ public class Tower : MonoBehaviour
     [SerializeField]
     private float fireRate = 1;
     [SerializeField]
-    private float fireRange = 3;
+    public float fireRange = 3;
     [SerializeField]
     private float turnRate = 25f;
     [SerializeField, ReadOnly]
