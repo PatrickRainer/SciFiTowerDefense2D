@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using Doozy.Engine.UI;
+using UnityEngine.EventSystems;
 
 public class SocketUIController : MonoBehaviour
 {
