@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public enum TowerGroup { Tanks, Group2 }
 public enum Tier { Tier1, Tier2, Tier3 }
-
+public enum TowerTypes { Laser, Plasma, Atom}
 
 
 public class Tower : MonoBehaviour
@@ -15,7 +15,7 @@ public class Tower : MonoBehaviour
     [SerializeField, InlineButton("GenerateID")]
     private string id;
     [SerializeField]
-    private string title;
+    public string title;
     [SerializeField]
     private int cost;
     [SerializeField]

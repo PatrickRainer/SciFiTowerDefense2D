@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: ed9ead64-6b4d-4208-bd82-712ea18b9cb6
-  title: Tower1.1
+  title: Laser1.1
   cost: 100
   groupID: 1
   tierID: 1
