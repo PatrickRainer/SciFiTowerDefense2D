@@ -178,14 +178,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: ed9ead64-6b4d-4208-bd82-712ea18b9cb6
   title: Laser1.1
-  cost: 100
-  resellPrice: 50
   type: 0
   upgradeLevel: 0
+  cost: 100
+  resellPrice: 50
   bullet: {fileID: 1208232975702459398, guid: a7aaf706f0509a744a1c59334dc26efb, type: 3}
   fireRate: 0.2
   fireRange: 3
-  bulletDamage: 8
+  bulletDamage: 6
   turnRate: 25
   myTowerSpot: {fileID: 0}
   enemiesInRange: []
