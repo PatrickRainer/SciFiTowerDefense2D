@@ -6955,8 +6955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e2a9e2c2f15bd42adf65a6508e2956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerSpotMenu: {fileID: 1752785321091090850}
-  UpgradeMenu: {fileID: 1752785319150408543}
+  socketMenu: {fileID: 1752785321091090850}
+  upgradeMenu: {fileID: 1752785319150408543}
   upgradeButton: {fileID: 7385846833266369213}
   myTowerSpot: {fileID: 1752785319349497843}
 --- !u!1 &1752785320411306132

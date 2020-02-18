@@ -9,13 +9,22 @@ using UnityEngine.EventSystems;
 public class SocketUIController : MonoBehaviour
 {
     [SerializeField, Required]
-    private GameObject TowerSpotMenu;
+    private GameObject socketMenu;
     [SerializeField, Required]
-    private GameObject UpgradeMenu;
+    private GameObject upgradeMenu;
     [SerializeField, Required]
     private Button upgradeButton;
     [SerializeField, Required]
     private SocketController myTowerSpot;
+
+    public static List<GameObject> socketUIs = new List<GameObject>();
+
+    private void Start()
+    {
+        RotateUI(socketMenu);
+        RotateUI(upgradeMenu);
+        RegisterUIs();
+    }
 
     private void OnMouseUp()
     {
@@ -29,20 +38,31 @@ public class SocketUIController : MonoBehaviour
        
     public void ShowMenu()
     {
+        HideAllSocketMenus();
+
         if (myTowerSpot.currentTower == null)
         {
-            TowerSpotMenu.SetActive(true);
+            socketMenu.SetActive(true);
         }
         else
         {
-            UpgradeMenu.SetActive(true);
+            upgradeMenu.SetActive(true);
         }
     }
 
-    public void HideAllMenus()
+    public void HideMyMenus()
     {
-        TowerSpotMenu.SetActive(false);
-        UpgradeMenu.SetActive(false);
+        socketMenu.SetActive(false);
+        upgradeMenu.SetActive(false);
+    }
+
+    [ResponsiveButtonGroup]
+    public static void HideAllSocketMenus()
+    {
+        foreach (GameObject item in socketUIs)
+        {
+            item.SetActive(false);
+        }
     }
 
     private void HandleUpgradeButtonInteractable()
@@ -61,7 +81,18 @@ public class SocketUIController : MonoBehaviour
         }
     }
 
+    [ResponsiveButtonGroup]
+    private void RotateUI(GameObject go)
+    {
+        //Debug.Log(socketMenu.transform.rotation);
+        go.transform.rotation = Quaternion.Euler(0, 0, 0);
+        //Debug.Log(socketMenu.transform.rotation);
+    }
 
-
+    private void RegisterUIs()
+    {
+        socketUIs.Add(socketMenu);
+        socketUIs.Add(upgradeMenu);
+    }
 
 }
