@@ -13,24 +13,31 @@ public class Wave
     [SerializeField]
     private int maxEnemies;
 
-    public float SpawnInterval { get => spawnInterval;}
+    public float SpawnInterval { get => spawnInterval; set => spawnInterval = value; }
     public int MaxEnemies { get => maxEnemies;}
     public GameObject EnemyPrefab { get => enemyPrefab;}
-
 }
 
 public class SpawnEnemy : MonoBehaviour
 {
+    [TitleGroup("References")]
     [SerializeField, Required, SceneObjectsOnly]
     private GameObject navMeshTarget;
+    [TitleGroup("Waves")]
     [SerializeField]
     private Wave[] waves;
+    [TitleGroup("Settings")]
     [SerializeField]
     private int timeBetweenWaves = 5;
+    [SerializeField]
+    private float randomSpawnMin = 0.1f;
+    [SerializeField]
+    private float randomSpawnMax = 3f;    
     [SerializeField,ReadOnly]
     private float lastSpawnTime;
     [SerializeField, ReadOnly]
     private int enemiesSpawned = 0;
+    
 
     [FoldoutGroup("Debug Info")]
     [SerializeField, ReadOnly]
@@ -81,6 +88,7 @@ public class SpawnEnemy : MonoBehaviour
                 Enemy neComp = newEnemy.GetComponent<Enemy>();
                 neComp.NavMeshTarget = navMeshTarget;
                 enemiesSpawned++;
+                waves[currentWave].SpawnInterval = Random.Range(randomSpawnMin, randomSpawnMax);
             }
 
             bool isEnemyInLevel = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
