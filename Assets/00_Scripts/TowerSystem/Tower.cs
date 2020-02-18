@@ -12,25 +12,35 @@ public enum TowerTypes { Laser, Flamer, Atom}
 
 public class Tower : MonoBehaviour
 {
+    [TitleGroup("Identity")]
     [SerializeField, InlineButton("GenerateID")]
     private string id;
     [SerializeField]
     public string title;
-    [SerializeField]
-    private int cost;
-    public int resellPrice;
     [EnumToggleButtons, Required]
     public TowerTypes type;
     [Required, Range(0, 2)]
     public int upgradeLevel;
+    [TitleGroup("Pricing")]
+    [SerializeField]
+    private int cost;
+    public int resellPrice;
+    [TitleGroup("References")]
     [SerializeField, AssetsOnly,Required]
     private GameObject bullet;
+    [TitleGroup("Settings")]
     [SerializeField]
     private float fireRate = 1;
     [SerializeField]
     public float fireRange = 3;
+    [SerializeField, Tooltip("Will overwrite the Bullet Damage")]
+    private int bulletDamage = 10;
+    [ShowInInspector, ReadOnly]
+    private float dps { get { return bulletDamage / fireRate; } }
     [SerializeField]
     private float turnRate = 25f;
+
+    [TitleGroup("Debug Info")]
     [SerializeField, ReadOnly]
     private SocketController myTowerSpot;
 
@@ -117,6 +127,8 @@ public class Tower : MonoBehaviour
                 GameObject go = Instantiate(bulletPrefab, transform);
                 Bullet newBullet = go.GetComponent<Bullet>();
 
+                newBullet.myTower = this;
+                newBullet.Damage = bulletDamage;
                 newBullet.Target = target;
                 newBullet.TargetPosition = targetPosition;
                 newBullet.StartPosition = transform.position;

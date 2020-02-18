@@ -32,10 +32,27 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField, ReadOnly]
     private int enemiesSpawned = 0;
 
-    [SerializeField, ReadOnly, Header("Debug Observers")]
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
     private int currentWave;
+    [FoldoutGroup("Debug Info")]
     [SerializeField, ReadOnly]
     private int wavesLength;
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
+    float timeInterval;
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
+    float spawnInterval;
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
+    bool isEnemySpawned;
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
+    bool isTimeToSpawn;
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
+    bool isMaxEnemiesReached;
 
     private void Start()
     {
@@ -51,13 +68,13 @@ public class SpawnEnemy : MonoBehaviour
         if (currentWave < waves.Length)
         {
 
-            float timeInterval = Time.time - lastSpawnTime;
-            float spawnInterval = waves[currentWave].SpawnInterval;
+            timeInterval = Time.time - lastSpawnTime;
+            spawnInterval = waves[currentWave].SpawnInterval;
 
-            bool isEnemySpawned = enemiesSpawned != 0 && timeInterval < timeBetweenWaves;
-            bool isTimeToSpawn = timeInterval > spawnInterval;
-            bool isMaxEnemiesReached = enemiesSpawned >= waves[currentWave].MaxEnemies;
-            if ((!isEnemySpawned || isTimeToSpawn) && !isMaxEnemiesReached)
+            isEnemySpawned = enemiesSpawned != 0 && timeInterval < timeBetweenWaves;
+            isTimeToSpawn = timeInterval > spawnInterval;
+            isMaxEnemiesReached = enemiesSpawned >= waves[currentWave].MaxEnemies;
+            if ((!isEnemySpawned && isTimeToSpawn) && !isMaxEnemiesReached)
             {
                 lastSpawnTime = Time.time;
                 GameObject newEnemy = Instantiate(waves[currentWave].EnemyPrefab, transform);
