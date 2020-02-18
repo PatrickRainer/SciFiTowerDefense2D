@@ -51,6 +51,9 @@ public class Bullet : MonoBehaviour
     [SerializeField, ReadOnly]
     [VerticalGroup("Base/Right")]
     private Vector3 worldPosition;
+    [ReadOnly]
+    [VerticalGroup("Base/Right")]
+    public Tower myTower;
 
     private float distance;
     private float startTime;

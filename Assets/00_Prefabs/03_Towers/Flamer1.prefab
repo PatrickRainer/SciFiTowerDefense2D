@@ -103,8 +103,8 @@ MonoBehaviour:
   type: 1
   upgradeLevel: 0
   bullet: {fileID: 1208232975702459398, guid: ff71053b69dbf324faf0b6538a2c22f5, type: 3}
-  fireRate: 1
-  fireRange: 3
+  fireRate: 2
+  fireRange: 2
   turnRate: 25
   myTowerSpot: {fileID: 0}
   enemiesInRange: []
