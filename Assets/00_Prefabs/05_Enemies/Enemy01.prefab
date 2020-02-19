@@ -198,8 +198,7 @@ MonoBehaviour:
   health: 100
   rotationDuration: 0.5
   navMeshTarget: {fileID: 0}
-  explosionPrefab: {fileID: 1557168041522247613, guid: 00e9cbb52f3582d4ba13b83773ed8da5,
-    type: 3}
+  explosionPrefab: {fileID: 127072, guid: 7f45705f5f30d8a45af0fc2eb8c8998a, type: 3}
   explosionSound: {fileID: 8300000, guid: 039dab4020fae2546b1fccde90997294, type: 3}
 --- !u!58 &902018126465311431
 CircleCollider2D:
