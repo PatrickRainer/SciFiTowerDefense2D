@@ -16,7 +16,7 @@ public class LevelButtonController : MonoBehaviour
     private Image star3;
 
     [TitleGroup("Settings")]
-    [SerializeField, Required, Tooltip("Use the BuildName")]
+    [SerializeField, InlineButton("GetButtonName")]
     private string levelName;
     [SerializeField]
     private Color starNotActiveColor;
@@ -76,5 +76,9 @@ public class LevelButtonController : MonoBehaviour
 
     }
 
+    private void GetButtonName()
+    {
+        levelName = GetComponentInParent<UIButton>().ButtonName;
+    }
 
 }
