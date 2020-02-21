@@ -6,6 +6,12 @@ using Sirenix.OdinInspector;
 public class LevelSaveLoadController : MonoBehaviour
 {
 
+    private void Start()
+    {
+        //Always unlock Level01
+        SetLockLevel("Level01", false);
+    }
+
     public static bool IsLevelLocked(string levelName)
     {
         int _isLevelLocked = PlayerPrefs.GetInt(levelName + "IsLocked", 1);
