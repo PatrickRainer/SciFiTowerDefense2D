@@ -9205,7 +9205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsPerDestroyedEnemy: 50
-  initialCoins: 1000
+  initialCoins: 200
   initialPlayerHealth: 20
 --- !u!4 &1066652569
 Transform:
@@ -9299,25 +9299,28 @@ MonoBehaviour:
   waves:
   - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
       type: 3}
-    spawnInterval: 4
-    maxEnemies: 10
-  - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
-      type: 3}
-    spawnInterval: 2
-    maxEnemies: 10
-  - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
+    spawnInterval: 1
+    maxEnemies: 5
+  - enemyPrefab: {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617,
       type: 3}
     spawnInterval: 1
-    maxEnemies: 10
-  - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
+    maxEnemies: 6
+  - enemyPrefab: {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c,
       type: 3}
-    spawnInterval: 0.5
-    maxEnemies: 10
+    spawnInterval: 1
+    maxEnemies: 5
   timeBetweenWaves: 1
+  randomSpawnMin: 0.1
+  randomSpawnMax: 3
   lastSpawnTime: 0
   enemiesSpawned: 0
   currentWave: 0
   wavesLength: 0
+  timeInterval: 0
+  spawnInterval: 0
+  isEnemySpawned: 0
+  isTimeToSpawn: 0
+  isMaxEnemiesReached: 0
 --- !u!4 &1080359549
 Transform:
   m_ObjectHideFlags: 0
