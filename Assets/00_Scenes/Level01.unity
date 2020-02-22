@@ -9164,12 +9164,7 @@ MonoBehaviour:
     - {fileID: 0}
     randomSpawnMin: 2
     randomSpawnMax: 3
-    maxEnemies: 5
-  - enemyPrefabs:
-    - {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617, type: 3}
-    randomSpawnMin: 2
-    randomSpawnMax: 3
-    maxEnemies: 5
+    maxEnemies: 2
   lastSpawnTime: 0
   enemiesSpawned: 0
   isEnemyInLevel: 0

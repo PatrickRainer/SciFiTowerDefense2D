@@ -15,7 +15,9 @@ public class GameStatusManager : MonoBehaviour
     public static void SetStatus(GameStates _status, MonoBehaviour sender)
     {
         status = _status;
-        Debug.Log("GameState changed to: " + _status + " by: " + sender.name);
+        //Debug.Log("GameState changed to: " + _status + " by: " + sender.name);
+
+        GameEventMessage.SendEvent(Status.ToString(), sender);
     }
 
 
