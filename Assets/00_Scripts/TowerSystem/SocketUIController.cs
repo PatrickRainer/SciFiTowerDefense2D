@@ -23,7 +23,17 @@ public class SocketUIController : MonoBehaviour
     {
         RotateUI(socketMenu);
         RotateUI(upgradeMenu);
+        
+    }
+
+    private void OnEnable()
+    {
         RegisterUIs();
+    }
+
+    private void OnDisable()
+    {
+        UnRegisterUIs();
     }
 
     private void OnMouseUp()
@@ -93,6 +103,12 @@ public class SocketUIController : MonoBehaviour
     {
         socketUIs.Add(socketMenu);
         socketUIs.Add(upgradeMenu);
+    }
+
+    private void UnRegisterUIs()
+    {
+        socketUIs.Remove(socketMenu);
+        socketUIs.Remove(upgradeMenu);
     }
 
 }
