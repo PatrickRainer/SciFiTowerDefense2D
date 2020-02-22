@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2200380370007021196}
   m_Layer: 2
   m_Name: Atom2
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,13 +178,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: dead4943-ad7b-40d3-808b-bd98ee98e157
   title: Atom3.2
-  cost: 150
-  resellPrice: 75
   type: 2
   upgradeLevel: 1
+  cost: 150
+  resellPrice: 75
   bullet: {fileID: 1208232975702459398, guid: 92e99abfdc7bea5459c8b5cfaa09c3f7, type: 3}
   fireRate: 1
   fireRange: 3
+  bulletDamage: 10
   turnRate: 25
   myTowerSpot: {fileID: 0}
   enemiesInRange: []

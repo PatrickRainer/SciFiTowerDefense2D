@@ -64,6 +64,9 @@ public class EnemySpawner : MonoBehaviour
     [FoldoutGroup("Debug Info")]
     [SerializeField, ReadOnly]
     bool isMaxEnemiesReached;
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
+    bool isTowerInLevel;
 
     private void Start()
     {
@@ -80,10 +83,11 @@ public class EnemySpawner : MonoBehaviour
 
             currentWave = LevelManager.GetWave();
             isEnemyInLevel = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
+            isTowerInLevel = GameObject.FindGameObjectsWithTag("Tower").Length > 0;
             isMaxEnemiesReached = enemiesSpawned >= waves[currentWave].maxEnemies;
             isLastWave = currentWave >= waves.Length -1;
             
-            if (!isMaxEnemiesReached)
+            if (!isMaxEnemiesReached && isTowerInLevel)
             {
                 SpawnEnemy();
             }

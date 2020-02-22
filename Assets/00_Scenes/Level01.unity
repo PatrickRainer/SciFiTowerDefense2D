@@ -9066,7 +9066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsPerDestroyedEnemy: 50
-  initialCoins: 300
+  initialCoins: 200
   initialPlayerHealth: 20
 --- !u!4 &1066652569
 Transform:
@@ -9137,7 +9137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1080359549}
   - component: {fileID: 1080359548}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -9157,23 +9157,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshTarget: {fileID: 2015643451}
-  timeBetweenWaves: 1
+  timeBetweenWaves: 3
   waves:
   - enemyPrefabs:
     - {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14, type: 3}
-    - {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617, type: 3}
-    - {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c, type: 3}
     - {fileID: 0}
-    randomSpawnMin: 1
-    randomSpawnMax: 2
-    maxEnemies: 2
+    randomSpawnMin: 2
+    randomSpawnMax: 3
+    maxEnemies: 5
   - enemyPrefabs:
-    - {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14, type: 3}
     - {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617, type: 3}
-    - {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c, type: 3}
-    randomSpawnMin: 0.1
-    randomSpawnMax: 2
-    maxEnemies: 3
+    randomSpawnMin: 2
+    randomSpawnMax: 3
+    maxEnemies: 5
   lastSpawnTime: 0
   enemiesSpawned: 0
   isEnemyInLevel: 0
@@ -9185,6 +9181,7 @@ MonoBehaviour:
   isEnemySpawned: 0
   isTimeToSpawn: 0
   isMaxEnemiesReached: 0
+  isTowerInLevel: 0
 --- !u!4 &1080359549
 Transform:
   m_ObjectHideFlags: 0

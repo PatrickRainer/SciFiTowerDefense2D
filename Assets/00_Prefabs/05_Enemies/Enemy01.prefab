@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a4556352d8bf047b795190e5e6a09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.8
   health: 100
   rotationDuration: 0.5
   navMeshTarget: {fileID: 0}

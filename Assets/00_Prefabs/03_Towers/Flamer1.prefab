@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 178975682236618229}
   m_Layer: 2
   m_Name: Flamer1
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,13 +98,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11cf92c8-5f18-4b13-adcc-4acc511e39ae
   title: Plasma2.1
-  cost: 100
-  resellPrice: 50
   type: 1
   upgradeLevel: 0
+  cost: 100
+  resellPrice: 50
   bullet: {fileID: 1208232975702459398, guid: ff71053b69dbf324faf0b6538a2c22f5, type: 3}
   fireRate: 2
   fireRange: 2
+  bulletDamage: 10
   turnRate: 25
   myTowerSpot: {fileID: 0}
   enemiesInRange: []

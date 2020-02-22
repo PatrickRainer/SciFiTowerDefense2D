@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8254067886424663912}
   m_Layer: 2
   m_Name: Laser3
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,13 +98,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: c3802274-94fc-494e-ad1d-5c32e3b28d5f
   title: Laser1.3
-  cost: 200
-  resellPrice: 100
   type: 0
   upgradeLevel: 2
+  cost: 200
+  resellPrice: 100
   bullet: {fileID: 1208232975702459398, guid: a7aaf706f0509a744a1c59334dc26efb, type: 3}
   fireRate: 0.3
   fireRange: 3
+  bulletDamage: 10
   turnRate: 25
   myTowerSpot: {fileID: 0}
   enemiesInRange: []
