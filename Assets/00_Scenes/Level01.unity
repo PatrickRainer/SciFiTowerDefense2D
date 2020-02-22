@@ -9066,7 +9066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsPerDestroyedEnemy: 50
-  initialCoins: 200
+  initialCoins: 300
   initialPlayerHealth: 20
 --- !u!4 &1066652569
 Transform:
@@ -9157,18 +9157,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshTarget: {fileID: 2015643451}
-  waves:
-  - enemyPrefab: {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14,
-      type: 3}
-    spawnInterval: 1
-    maxEnemies: 2
-  - enemyPrefab: {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617,
-      type: 3}
-    spawnInterval: 1
-    maxEnemies: 3
   timeBetweenWaves: 1
-  randomSpawnMin: 0.1
-  randomSpawnMax: 2
+  waves:
+  - enemyPrefabs:
+    - {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14, type: 3}
+    - {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617, type: 3}
+    - {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c, type: 3}
+    - {fileID: 0}
+    randomSpawnMin: 1
+    randomSpawnMax: 2
+    maxEnemies: 2
+  - enemyPrefabs:
+    - {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14, type: 3}
+    - {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617, type: 3}
+    - {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c, type: 3}
+    randomSpawnMin: 0.1
+    randomSpawnMax: 2
+    maxEnemies: 3
   lastSpawnTime: 0
   enemiesSpawned: 0
   isEnemyInLevel: 0

@@ -7,32 +7,28 @@ using Sirenix.OdinInspector;
 public class Wave
 {
     [SerializeField, AssetsOnly]
-    private GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     [SerializeField]
-    float spawnInterval;
+    public float randomSpawnMin = 0.1f;
     [SerializeField]
-    private int maxEnemies;
+    public float randomSpawnMax = 3f;
 
-    public float SpawnInterval { get => spawnInterval; set => spawnInterval = value; }
-    public int MaxEnemies { get => maxEnemies;}
-    public GameObject EnemyPrefab { get => enemyPrefab;}
+    [SerializeField]
+    public int maxEnemies;
+
 }
 
 public class EnemySpawner : MonoBehaviour
 {
-    [TitleGroup("References")]
+    [TitleGroup("References & Settings")]
     [SerializeField, Required, SceneObjectsOnly]
     private GameObject navMeshTarget;
+    [SerializeField]
+    private int timeBetweenWaves = 5;
+
     [TitleGroup("Waves")]
     [SerializeField]
     private Wave[] waves;
-    [TitleGroup("Settings")]
-    [SerializeField]
-    private int timeBetweenWaves = 5;
-    [SerializeField]
-    private float randomSpawnMin = 0.1f;
-    [SerializeField]
-    private float randomSpawnMax = 3f;
 
     [FoldoutGroup("Debug Info")]
     [SerializeField,ReadOnly]
@@ -73,7 +69,7 @@ public class EnemySpawner : MonoBehaviour
     {
         lastSpawnTime = Time.time;
 
-        StartCoroutine(Timer(randomSpawnMin, randomSpawnMax));
+        StartCoroutine(Timer(waves[currentWave].randomSpawnMin, waves[currentWave].randomSpawnMax));
     }
 
     private IEnumerator Timer(float minInterval, float maxInterval)
@@ -84,7 +80,7 @@ public class EnemySpawner : MonoBehaviour
 
             currentWave = LevelManager.GetWave();
             isEnemyInLevel = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
-            isMaxEnemiesReached = enemiesSpawned >= waves[currentWave].MaxEnemies;
+            isMaxEnemiesReached = enemiesSpawned >= waves[currentWave].maxEnemies;
             isLastWave = currentWave >= waves.Length -1;
             
             if (!isMaxEnemiesReached)
@@ -113,7 +109,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        GameObject newEnemy = Instantiate(waves[currentWave].EnemyPrefab, transform);
+        GameObject randomPrefab = waves[currentWave].enemyPrefabs[Random.Range(0, waves[currentWave].enemyPrefabs.Length-1)];
+        GameObject newEnemy = Instantiate(randomPrefab, transform);
         Enemy neComp = newEnemy.GetComponent<Enemy>();
         neComp.NavMeshTarget = navMeshTarget;
         enemiesSpawned++;
