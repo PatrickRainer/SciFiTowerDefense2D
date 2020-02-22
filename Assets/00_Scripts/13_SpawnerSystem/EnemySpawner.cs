@@ -18,7 +18,7 @@ public class Wave
     public GameObject EnemyPrefab { get => enemyPrefab;}
 }
 
-public class SpawnEnemy : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     [TitleGroup("References")]
     [SerializeField, Required, SceneObjectsOnly]
@@ -32,12 +32,20 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField]
     private float randomSpawnMin = 0.1f;
     [SerializeField]
-    private float randomSpawnMax = 3f;    
+    private float randomSpawnMax = 3f;
+
+    [FoldoutGroup("Debug Info")]
     [SerializeField,ReadOnly]
     private float lastSpawnTime;
+    [FoldoutGroup("Debug Info")]
     [SerializeField, ReadOnly]
     private int enemiesSpawned = 0;
-    
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
+    private bool isEnemyInLevel;
+    [FoldoutGroup("Debug Info")]
+    [SerializeField, ReadOnly]
+    private bool isLastWave;
 
     [FoldoutGroup("Debug Info")]
     [SerializeField, ReadOnly]
@@ -64,47 +72,50 @@ public class SpawnEnemy : MonoBehaviour
     private void Start()
     {
         lastSpawnTime = Time.time;
+
+        StartCoroutine(Timer(randomSpawnMin, randomSpawnMax));
     }
 
-    private void Update()
+    private IEnumerator Timer(float minInterval, float maxInterval)
     {
-        wavesLength = waves.Length; // Only used for Debug reasons
-
-        currentWave = LevelManager.GetWave();
-        
-        if (currentWave < waves.Length)
+        while (true)
         {
+            yield return new WaitForSeconds(Random.Range(minInterval, maxInterval));
 
-            timeInterval = Time.time - lastSpawnTime;
-            spawnInterval = waves[currentWave].SpawnInterval;
-
-            isEnemySpawned = enemiesSpawned != 0 && timeInterval < timeBetweenWaves;
-            isTimeToSpawn = timeInterval > spawnInterval;
+            currentWave = LevelManager.GetWave();
+            isEnemyInLevel = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
             isMaxEnemiesReached = enemiesSpawned >= waves[currentWave].MaxEnemies;
-            if ((!isEnemySpawned && isTimeToSpawn) && !isMaxEnemiesReached)
+            isLastWave = currentWave >= waves.Length -1;
+            
+            if (!isMaxEnemiesReached)
             {
-                lastSpawnTime = Time.time;
-                GameObject newEnemy = Instantiate(waves[currentWave].EnemyPrefab, transform);
-                Enemy neComp = newEnemy.GetComponent<Enemy>();
-                neComp.NavMeshTarget = navMeshTarget;
-                enemiesSpawned++;
-                waves[currentWave].SpawnInterval = Random.Range(randomSpawnMin, randomSpawnMax);
+                SpawnEnemy();
             }
+            else if (isMaxEnemiesReached && !isEnemyInLevel && !isLastWave)
+            {
+                GoToNextWave();
+            }
+            else if (isLastWave && isMaxEnemiesReached && !isEnemyInLevel)
+            {               
+                GameStatusManager.SetStatus(GameStates.GameWon, this);
+                yield break;
+            }
+        }
 
-            bool isEnemyInLevel = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
-            if (isMaxEnemiesReached && !isEnemyInLevel)
-            {
-                LevelManager.SetWave(LevelManager.GetWave() + 1);
-                LevelManager.SetCoins(Mathf.RoundToInt(LevelManager.GetCoins() * 1.1f));
-                enemiesSpawned = 0;
-                lastSpawnTime = Time.time;
-            }
-        }
-        else
-        {
-            GameStatusManager.SetStatus(GameStates.GameWon, this);
-            this.gameObject.SetActive(false);
-        }
     }
 
+    private void GoToNextWave()
+    {
+        LevelManager.SetWave(LevelManager.GetWave() + 1);
+        LevelManager.SetCoins(Mathf.RoundToInt(LevelManager.GetCoins() * 1.1f));
+        enemiesSpawned = 0;
+    }
+
+    private void SpawnEnemy()
+    {
+        GameObject newEnemy = Instantiate(waves[currentWave].EnemyPrefab, transform);
+        Enemy neComp = newEnemy.GetComponent<Enemy>();
+        neComp.NavMeshTarget = navMeshTarget;
+        enemiesSpawned++;
+    }
 }

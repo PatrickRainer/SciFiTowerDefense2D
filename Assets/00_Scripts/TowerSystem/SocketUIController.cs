@@ -59,7 +59,7 @@ public class SocketUIController : MonoBehaviour
     [ResponsiveButtonGroup]
     public static void HideAllSocketMenus()
     {
-        foreach (GameObject item in socketUIs)
+        foreach (GameObject item in socketUIs) // BUG: Null exception after restarting the level
         {
             item.SetActive(false);
         }

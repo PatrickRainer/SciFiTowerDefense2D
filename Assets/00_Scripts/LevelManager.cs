@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour
             if (playerHealth <= 0)
             {
                 GameStatusManager.SetStatus(GameStates.GameLost, GameObject.FindObjectOfType<LevelManager>());
-                GameObject.FindObjectOfType<SpawnEnemy>().gameObject.SetActive(false);
+                GameObject.FindObjectOfType<EnemySpawner>().gameObject.SetActive(false);
             }
         }
     }
