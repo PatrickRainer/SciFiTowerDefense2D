@@ -32,7 +32,23 @@ public class LevelSaveLoadController : MonoBehaviour
         if (message.EventName == GameStates.GameWon.ToString())
         {
             UnlockNextLevel();
+            SetStarsAchieved();
         }
+    }
+
+    private void SetStarsAchieved()
+    {
+        int initHealth = GameObject.FindObjectOfType<LevelManager>().GetInitialHealth();
+        int endHealth = LevelManager.PlayerHealth;
+
+        float percentSurvived = 100 / initHealth * endHealth;
+        Debug.Log("percent Survived: " + percentSurvived);
+
+        int starsAchieved = (int) (3 * percentSurvived / 100);
+        Debug.Log("starsAchieved: " + starsAchieved);
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        SetStars(sceneName, starsAchieved);
     }
 
     private void UnlockNextLevel()

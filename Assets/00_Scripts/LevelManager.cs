@@ -12,14 +12,18 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private int initialCoins = 500;
     [SerializeField]
-    private int initialPlayerHealth = 4;
+    private int initialPlayerHealth = 20;
     private static int coins = 0;
     private static int playerHealth = 0;
     private static int wave = 0;
 
     private LevelManager myInstance;
 
-
+    public int GetInitialHealth()
+    {
+        return initialPlayerHealth;
+    }
+    
     public static int GetCoins()
     {
         return coins;
