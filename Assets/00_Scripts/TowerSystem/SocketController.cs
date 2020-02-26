@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Sirenix.OdinInspector;
-
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class SocketData
@@ -26,6 +28,10 @@ public class SocketController : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         UIController.ShowMenu();
     }
 
