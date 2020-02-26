@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class LevelInit : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject levelUI;
+    //[SerializeField]
+    //private GameObject levelUI;
 
     private void Start()
     {
-        levelUI.SetActive(true);
+        //levelUI.SetActive(true);
         GameStatusManager.SetStatus(GameStates.GameRuns, this);
     }
 }

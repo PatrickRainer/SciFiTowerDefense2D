@@ -98,4 +98,5 @@ public class LevelManager : MonoBehaviour
     {
         SetCoins(GetCoins() + coinsPerDestroyedEnemy);
     }
+
 }

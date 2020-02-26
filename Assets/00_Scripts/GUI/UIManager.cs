@@ -6,6 +6,7 @@ using TMPro;
 using Doozy.Engine.UI;
 using Doozy.Engine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class UIManager : MonoBehaviour
     private UIView gameHUD;
     [SerializeField, BoxGroup("Panels")]
     private UIView pausePanel;
+
+    private Canvas myMainCanvas;
+
+    private void Start()
+    {
+        myMainCanvas = GetComponentInParent<Canvas>();
+        myMainCanvas.worldCamera = Camera.main;
+    }
 
     private void Update()
     {
@@ -75,5 +84,9 @@ public class UIManager : MonoBehaviour
     {
         waveLabel.text = "Wave: " + LevelManager.GetWave().ToString();
     }
-   
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
