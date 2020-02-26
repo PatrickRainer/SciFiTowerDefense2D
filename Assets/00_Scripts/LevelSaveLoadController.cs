@@ -42,10 +42,10 @@ public class LevelSaveLoadController : MonoBehaviour
         int endHealth = LevelManager.PlayerHealth;
 
         float percentSurvived = 100 / initHealth * endHealth;
-        Debug.Log("percent Survived: " + percentSurvived);
+        //Debug.Log("percent Survived: " + percentSurvived);
 
         int starsAchieved = (int) (3 * percentSurvived / 100);
-        Debug.Log("starsAchieved: " + starsAchieved);
+        //Debug.Log("starsAchieved: " + starsAchieved);
 
         string sceneName = SceneManager.GetActiveScene().name;
         SetStars(sceneName, starsAchieved);
