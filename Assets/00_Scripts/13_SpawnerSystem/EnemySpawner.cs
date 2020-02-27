@@ -16,9 +16,9 @@ public class Wave
 {
     [TitleGroup("Wave Settings")]
     [SerializeField, MinMaxSlider(0.1f, 5f)]
-    public Vector2 spawnInterval;
+    public Vector2 spawnInterval = new Vector2(0.1f, 3f);
     [SerializeField]
-    public int maxEnemies;
+    public int maxEnemies = 20;
 
     [SerializeField, AssetsOnly]
     public enemySpawnData[] enemyObjects;

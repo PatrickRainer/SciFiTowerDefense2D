@@ -1069,15 +1069,39 @@ MonoBehaviour:
   navMeshTarget: {fileID: 2015643451}
   timeBetweenWaves: 3
   waves:
-  - spawnInterval: {x: 0.300491, y: 2.4978724}
+  - spawnInterval: {x: 0.8, y: 2.4978724}
     maxEnemies: 20
     enemyObjects:
-    - enemyPrefab: {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617,
-        type: 3}
-      chanceToSpawn: 35
     - enemyPrefab: {fileID: 6481754056633370493, guid: 30c8d5eb8484cd84598ba5bdaa422c6c,
         type: 3}
-      chanceToSpawn: 50
+      chanceToSpawn: 100
+  - spawnInterval: {x: 0.6052373, y: 2.351807}
+    maxEnemies: 20
+    enemyObjects:
+    - enemyPrefab: {fileID: 6481754056633370493, guid: 30c8d5eb8484cd84598ba5bdaa422c6c,
+        type: 3}
+      chanceToSpawn: 90
+    - enemyPrefab: {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617,
+        type: 3}
+      chanceToSpawn: 10
+  - spawnInterval: {x: 0.58072287, y: 2.301205}
+    maxEnemies: 20
+    enemyObjects:
+    - enemyPrefab: {fileID: 6481754056633370493, guid: 30c8d5eb8484cd84598ba5bdaa422c6c,
+        type: 3}
+      chanceToSpawn: 90
+    - enemyPrefab: {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c,
+        type: 3}
+      chanceToSpawn: 10
+  - spawnInterval: {x: 0.71566266, y: 2.7228916}
+    maxEnemies: 20
+    enemyObjects:
+    - enemyPrefab: {fileID: 6481754056633370493, guid: 30c8d5eb8484cd84598ba5bdaa422c6c,
+        type: 3}
+      chanceToSpawn: 80
+    - enemyPrefab: {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617,
+        type: 3}
+      chanceToSpawn: 10
     - enemyPrefab: {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c,
         type: 3}
       chanceToSpawn: 10
