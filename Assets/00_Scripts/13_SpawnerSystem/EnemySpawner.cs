@@ -4,18 +4,24 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 [System.Serializable]
+public class enemySpawnData
+{
+    public GameObject enemyPrefab;
+    public int chanceToSpawn = 34;
+}
+
+
+[System.Serializable]
 public class Wave
 {
-    [SerializeField, AssetsOnly]
-    public GameObject[] enemyPrefabs;
-    [SerializeField]
-    public float randomSpawnMin = 0.1f;
-    [SerializeField]
-    public float randomSpawnMax = 3f;
-
+    [TitleGroup("Wave Settings")]
+    [SerializeField, MinMaxSlider(0.1f, 5f)]
+    public Vector2 spawnInterval;
     [SerializeField]
     public int maxEnemies;
 
+    [SerializeField, AssetsOnly]
+    public enemySpawnData[] enemyObjects;
 }
 
 public class EnemySpawner : MonoBehaviour
@@ -45,7 +51,8 @@ public class EnemySpawner : MonoBehaviour
 
     [FoldoutGroup("Debug Info")]
     [SerializeField, ReadOnly]
-    private int currentWave;
+    private int currentWaveIdx;
+    private Wave currentWave { get => waves[currentWaveIdx]; }
     [FoldoutGroup("Debug Info")]
     [SerializeField, ReadOnly]
     private int wavesLength;
@@ -72,7 +79,7 @@ public class EnemySpawner : MonoBehaviour
     {
         lastSpawnTime = Time.time;
 
-        StartCoroutine(Timer(waves[currentWave].randomSpawnMin, waves[currentWave].randomSpawnMax));
+        StartCoroutine(Timer(currentWave.spawnInterval.x, currentWave.spawnInterval.y));
     }
 
     private IEnumerator Timer(float minInterval, float maxInterval)
@@ -81,11 +88,11 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minInterval, maxInterval));
 
-            currentWave = LevelManager.GetWave();
+            currentWaveIdx = LevelManager.GetWave();
             isEnemyInLevel = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
             isTowerInLevel = GameObject.FindGameObjectsWithTag("Tower").Length > 0;
-            isMaxEnemiesReached = enemiesSpawned >= waves[currentWave].maxEnemies;
-            isLastWave = currentWave >= waves.Length -1;
+            isMaxEnemiesReached = enemiesSpawned >= waves[currentWaveIdx].maxEnemies;
+            isLastWave = currentWaveIdx >= waves.Length -1;
             
             if (!isMaxEnemiesReached && isTowerInLevel)
             {
@@ -113,10 +120,43 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        GameObject randomPrefab = waves[currentWave].enemyPrefabs[Random.Range(0, waves[currentWave].enemyPrefabs.Length-1)];
-        GameObject newEnemy = Instantiate(randomPrefab, transform);
+        List<int> weightsListed = new List<int>(); 
+        foreach (enemySpawnData item in currentWave.enemyObjects)
+        {
+            weightsListed.Add(item.chanceToSpawn);
+        }
+
+        int spawnIdx = GetRandomWeightedIndex(weightsListed);
+
+        GameObject newEnemy = Instantiate(currentWave.enemyObjects[spawnIdx].enemyPrefab, transform);
         Enemy neComp = newEnemy.GetComponent<Enemy>();
         neComp.NavMeshTarget = navMeshTarget;
         enemiesSpawned++;
+    }
+
+    // Gets a Index out of a list by weights so chance to spawn
+    private int GetRandomWeightedIndex(List<int> weights)
+    {
+        if (weights == null || weights.Count == 0) return -1;
+
+        int total = 0;
+        int i;
+        for (i = 0; i < weights.Count; i++)
+        {
+            total += weights[i];
+        }
+
+        float r = Random.value;
+        float s = 0f;
+
+        for (i = 0; i < weights.Count; i++)
+        {
+            if (weights[i] <= 0f) continue;
+
+            s += (float)weights[i] / total;
+            if (s >= r) return i;
+        }
+
+        return -1;
     }
 }

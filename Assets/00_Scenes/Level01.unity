@@ -1086,17 +1086,23 @@ MonoBehaviour:
   navMeshTarget: {fileID: 2015643451}
   timeBetweenWaves: 3
   waves:
-  - enemyPrefabs:
-    - {fileID: 6481754056633370493, guid: a87c85034cab7454ea90261a5d111a14, type: 3}
-    - {fileID: 0}
-    randomSpawnMin: 2
-    randomSpawnMax: 3
-    maxEnemies: 2
+  - spawnInterval: {x: 0.300491, y: 2.4978724}
+    maxEnemies: 20
+    enemyObjects:
+    - enemyPrefab: {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617,
+        type: 3}
+      chanceToSpawn: 70
+    - enemyPrefab: {fileID: 6481754056633370493, guid: 30c8d5eb8484cd84598ba5bdaa422c6c,
+        type: 3}
+      chanceToSpawn: 95
+    - enemyPrefab: {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c,
+        type: 3}
+      chanceToSpawn: 70
   lastSpawnTime: 0
   enemiesSpawned: 0
   isEnemyInLevel: 0
   isLastWave: 0
-  currentWave: 0
+  currentWaveIdx: 0
   wavesLength: 0
   timeInterval: 0
   spawnInterval: 0
