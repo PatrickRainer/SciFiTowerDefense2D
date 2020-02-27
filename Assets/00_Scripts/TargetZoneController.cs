@@ -22,7 +22,8 @@ public class TargetZoneController : MonoBehaviour
         {
             //Debug.Log("Targetzone reached");
             LevelManager.PlayerHealth -= 1;
-            cameraShake.StartShake();
+            //cameraShake.StartShake();
+            //TODO: Play a Sound
             Destroy(otherObj);
         }
     }

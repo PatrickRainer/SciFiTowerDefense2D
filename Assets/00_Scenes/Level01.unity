@@ -467,7 +467,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -483,22 +482,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7038d579ba73272429031d10144d4d4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeDuration: 0
-  shakeAmount: 0.7
-  decreaseFactor: 1
-  shakeSaveDurationValue: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1091,13 +1074,13 @@ MonoBehaviour:
     enemyObjects:
     - enemyPrefab: {fileID: 6481754056633370493, guid: e261558927fde384d80e64cb1c9cd617,
         type: 3}
-      chanceToSpawn: 70
+      chanceToSpawn: 35
     - enemyPrefab: {fileID: 6481754056633370493, guid: 30c8d5eb8484cd84598ba5bdaa422c6c,
         type: 3}
-      chanceToSpawn: 95
+      chanceToSpawn: 50
     - enemyPrefab: {fileID: 6481754056633370493, guid: 8097bd58f5d320e49b3bed264551ad2c,
         type: 3}
-      chanceToSpawn: 70
+      chanceToSpawn: 10
   lastSpawnTime: 0
   enemiesSpawned: 0
   isEnemyInLevel: 0
