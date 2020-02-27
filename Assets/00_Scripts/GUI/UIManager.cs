@@ -82,7 +82,7 @@ public class UIManager : MonoBehaviour
 
     private void ShowWave()
     {
-        waveLabel.text = "Wave: " + LevelManager.GetWave().ToString();
+        waveLabel.text = "Wave: " + LevelManager.GetWave()+1.ToString();
     }
 
     public void GoToMainMenu()
