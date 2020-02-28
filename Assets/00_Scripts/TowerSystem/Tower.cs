@@ -59,7 +59,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         myTowerSpot = GetComponentInParent<SocketController>();
-        lastShotTime = Time.time;
+        lastShotTime = Time.time - FireRate;
         GetComponent<CircleCollider2D>().radius = fireRange;
         targetZone = GameObject.FindObjectOfType<TargetZoneController>().gameObject;
     }
