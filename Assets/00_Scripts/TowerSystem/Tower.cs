@@ -45,10 +45,10 @@ public class Tower : MonoBehaviour
     private SocketController myTowerSpot;
 
     [SerializeField, ReadOnly, SceneObjectsOnly]
-    private List<GameObject> enemiesInRange = new List<GameObject>();
-    private float lastShotTime;
-    private GameObject targetZone;
-    private GameObject targetToShoot;
+    protected List<GameObject> enemiesInRange = new List<GameObject>();
+    protected float lastShotTime;
+    protected GameObject targetZone;
+    protected GameObject targetToShoot;
 
 
     public string ID { get => id; set => id = value; }
@@ -56,7 +56,7 @@ public class Tower : MonoBehaviour
     public float FireRate { get => fireRate; set => fireRate = value; }
     public int Cost { get => cost; set => cost = value; }
 
-    private void Start()
+    protected virtual void Start()
     {
         myTowerSpot = GetComponentInParent<SocketController>();
         lastShotTime = Time.time - FireRate;
@@ -69,7 +69,7 @@ public class Tower : MonoBehaviour
         ID = System.Guid.NewGuid().ToString();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         targetToShoot = GetNearestEnemyToTargetZone();
         RotateTower();
@@ -95,7 +95,7 @@ public class Tower : MonoBehaviour
     //    return nearestEnemy;
     //}
 
-    private GameObject GetNearestEnemyToTargetZone()
+    protected GameObject GetNearestEnemyToTargetZone()
     {
         GameObject nearest = null;
         float minimalEnemyDistance = float.MaxValue;
@@ -103,6 +103,11 @@ public class Tower : MonoBehaviour
 
         foreach (GameObject enemy in enemiesInRange)
         {
+            if (enemy == null)
+            {
+                return null;
+            }
+
             float distanceToTargetZone = Vector2.Distance(targetZone.GetPosition(), enemy.GetPosition());
 
             if (distanceToTargetZone < minimalEnemyDistance)
@@ -115,7 +120,7 @@ public class Tower : MonoBehaviour
         return nearest;
     }
 
-    private void Shoot(GameObject target)
+    protected virtual void Shoot(GameObject target)
     {
         if (target != null)
         {
@@ -138,7 +143,7 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private void RotateTower()
+    protected void RotateTower()
     {
         if (targetToShoot == null)
         {
@@ -164,7 +169,5 @@ public class Tower : MonoBehaviour
             enemiesInRange.Remove(other.gameObject);
         }
     }
-
-
-
 }
+

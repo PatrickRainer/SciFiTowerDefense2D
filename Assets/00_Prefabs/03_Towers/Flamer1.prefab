@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6003687392739988557}
   - component: {fileID: 8649686343113327285}
-  - component: {fileID: -1741247609489541522}
+  - component: {fileID: 1795203311262882973}
   - component: {fileID: 178975682236618229}
   - component: {fileID: 3757641589637562443}
   m_Layer: 2
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1741247609489541522
+--- !u!114 &1795203311262882973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,18 +93,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2162440734104741327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcba60d847d0adc4b954437069454a35, type: 3}
+  m_Script: {fileID: 11500000, guid: 26bb290759333654f97d4054738b752a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 11cf92c8-5f18-4b13-adcc-4acc511e39ae
-  title: Plasma2.1
+  id: 372a87b0-a4b0-417c-a89e-e7c8e24e356a
+  title: Flamer1.1
   type: 1
   upgradeLevel: 0
   cost: 100
   resellPrice: 50
-  bullet: {fileID: 1208232975702459398, guid: ff71053b69dbf324faf0b6538a2c22f5, type: 3}
-  fireRate: 2
-  fireRange: 2
+  bullet: {fileID: 179830, guid: cb36282f22f35ff4aae521451c38358b, type: 3}
+  fireRate: 1
+  fireRange: 2.5
   bulletDamage: 10
   turnRate: 25
   myTowerSpot: {fileID: 0}
