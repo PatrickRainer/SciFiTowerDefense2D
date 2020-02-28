@@ -21,4 +21,13 @@ public class VisualRangeController : MonoBehaviour
     {
         visualRange.SetActive(!visualRange.activeInHierarchy);
     }
+
+    [ResponsiveButtonGroup]
+    private void SetRangeSize()
+    {
+        myTower = GetComponent<Tower>();
+
+        Vector3 RangeSize = new Vector3(myTower.fireRange, myTower.fireRange);
+        visualRange.transform.localScale = RangeSize;
+    }
 }
