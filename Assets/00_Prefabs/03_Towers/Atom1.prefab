@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6003687392739988557}
   - component: {fileID: 8649686343113327285}
-  - component: {fileID: -1741247609489541522}
+  - component: {fileID: 1529311856654628586}
   - component: {fileID: 4493884689053205400}
   - component: {fileID: 3757641589637562443}
   m_Layer: 2
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1741247609489541522
+--- !u!114 &1529311856654628586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,18 +93,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2162440734104741327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcba60d847d0adc4b954437069454a35, type: 3}
+  m_Script: {fileID: 11500000, guid: ff7902d0d66e4734f82626996522a7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 603dded6-5433-4d28-9120-2500b00035fe
-  title: Atom3.1
+  id: 0b867243-2d2c-48fe-a354-61491b357605
+  title: Atom1
   type: 2
   upgradeLevel: 0
   cost: 100
   resellPrice: 50
-  bullet: {fileID: 128572, guid: ad0fab502dd6df6438441712d79bbd38, type: 3}
+  bullet: {fileID: 128572, guid: 4be7673e7e725144cb70424bc235517c, type: 3}
   fireRate: 3
-  fireRange: 6
+  fireRange: 5
   bulletDamage: 50
   turnRate: 25
   myTowerSpot: {fileID: 0}

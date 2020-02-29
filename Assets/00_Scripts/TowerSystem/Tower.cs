@@ -34,7 +34,7 @@ public class Tower : MonoBehaviour
     [SerializeField]
     public float fireRange = 3;
     [SerializeField, Tooltip("Will overwrite the Bullet Damage")]
-    private int bulletDamage = 10;
+    protected int bulletDamage = 10;
     [ShowInInspector, ReadOnly]
     private float dps { get { return bulletDamage / fireRate; } }
     [SerializeField]
@@ -46,9 +46,11 @@ public class Tower : MonoBehaviour
 
     [SerializeField, ReadOnly, SceneObjectsOnly]
     protected List<GameObject> enemiesInRange = new List<GameObject>();
+
     protected float lastShotTime;
     protected GameObject targetZone;
     protected GameObject targetToShoot;
+
 
 
     public string ID { get => id; set => id = value; }
