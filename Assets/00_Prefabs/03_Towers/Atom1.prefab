@@ -102,7 +102,7 @@ MonoBehaviour:
   upgradeLevel: 0
   cost: 100
   resellPrice: 50
-  bullet: {fileID: 1208232975702459398, guid: 92e99abfdc7bea5459c8b5cfaa09c3f7, type: 3}
+  bullet: {fileID: 128572, guid: ad0fab502dd6df6438441712d79bbd38, type: 3}
   fireRate: 3
   fireRange: 6
   bulletDamage: 50
