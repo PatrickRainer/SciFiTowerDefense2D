@@ -26,17 +26,17 @@ public class Tower : MonoBehaviour
     private int cost;
     public int resellPrice;
     [TitleGroup("References")]
-    [SerializeField, AssetsOnly,Required]
+    [SerializeField, AssetsOnly, Required]
     private GameObject bullet;
     [TitleGroup("Settings")]
     [SerializeField]
     private float fireRate = 1;
     [SerializeField]
     public float fireRange = 3;
-    [SerializeField, Tooltip("Will overwrite the Bullet Damage")]
-    protected int bulletDamage = 10;
-    [ShowInInspector, ReadOnly]
-    private float dps { get { return bulletDamage / fireRate; } }
+    //[SerializeField, Tooltip("Will overwrite the Bullet Damage")]
+    //protected int bulletDamage = 10;
+    //[ShowInInspector, ReadOnly]
+    //private float dps { get { return bulletDamage / fireRate; } }
     [SerializeField]
     private float turnRate = 25f;
 
@@ -135,7 +135,7 @@ public class Tower : MonoBehaviour
                 Bullet newBullet = go.GetComponent<Bullet>();
 
                 newBullet.myTower = this;
-                newBullet.Damage = bulletDamage;
+                //newBullet.Damage = bulletDamage;
                 newBullet.Target = target;
                 newBullet.TargetPosition = targetPosition;
                 newBullet.StartPosition = transform.position;

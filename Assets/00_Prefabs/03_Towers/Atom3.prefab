@@ -182,10 +182,9 @@ MonoBehaviour:
   upgradeLevel: 2
   cost: 200
   resellPrice: 100
-  bullet: {fileID: 1208232975702459398, guid: 92e99abfdc7bea5459c8b5cfaa09c3f7, type: 3}
+  bullet: {fileID: 128572, guid: 4be7673e7e725144cb70424bc235517c, type: 3}
   fireRate: 1
   fireRange: 3
-  bulletDamage: 10
   turnRate: 25
   myTowerSpot: {fileID: 0}
   enemiesInRange: []

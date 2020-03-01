@@ -20,7 +20,7 @@ public class MissileTower : Tower
                 GameObject missileObj = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 Missile newMissile = missileObj.GetComponent<Missile>();
                 newMissile.enemyToFollow = target;
-                newMissile.damage = bulletDamage;
+                //newMissile.damage = bulletDamage;
 
                 lastShotTime = Time.time;
             }
