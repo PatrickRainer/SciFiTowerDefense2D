@@ -6,11 +6,19 @@ public class ToggleRangeButton : MonoBehaviour
 {
     public void ToggleAllRanges()
     {
-        VisualRangeController[] vrcs = GameObject.FindObjectsOfType<VisualRangeController>();
-
-        foreach (VisualRangeController vrc in vrcs)
+        if (VisualRangeController.isAnyRangeVisible())
         {
-            vrc.ToggleVisualRange();
+            foreach (VisualRangeController vrc in VisualRangeController.visualRanges)
+            {
+                vrc.HideRange();
+            }
+        }
+        else
+        {
+            foreach (VisualRangeController vrc in VisualRangeController.visualRanges)
+            {
+                vrc.ShowRange();
+            }
         }
     }
 }

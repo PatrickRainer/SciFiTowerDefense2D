@@ -1774,11 +1774,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas - LevelUI
       objectReference: {fileID: 0}
-    - target: {fileID: 4978871843646729724, guid: b58a2513f99bc5f40b7d2b4383912233,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4978871843646729713, guid: b58a2513f99bc5f40b7d2b4383912233,
         type: 3}
       propertyPath: m_LocalPosition.x
