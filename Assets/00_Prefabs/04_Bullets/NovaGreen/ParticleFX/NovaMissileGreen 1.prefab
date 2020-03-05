@@ -18777,6 +18777,7 @@ GameObject:
   - component: {fileID: 19980816}
   - component: {fileID: 10834044}
   - component: {fileID: 8291448}
+  - component: {fileID: -6607360582245308502}
   m_Layer: 0
   m_Name: NovaMissileGreen 1
   m_TagString: Untagged
@@ -23607,3 +23608,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &-6607360582245308502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a83acc612faaef4e80f04b1b0b19f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10

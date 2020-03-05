@@ -23709,6 +23709,7 @@ GameObject:
   - component: {fileID: 8285006}
   - component: {fileID: 10832318}
   - component: {fileID: 11451978}
+  - component: {fileID: -1168515322137059477}
   m_Layer: 0
   m_Name: ExplosionNovaGreen 1
   m_TagString: Untagged
@@ -28612,3 +28613,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0.3
   killAfterLife: 0
+--- !u!114 &-1168515322137059477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a83acc612faaef4e80f04b1b0b19f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10

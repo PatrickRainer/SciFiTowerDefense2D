@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6615958272772210874}
   - component: {fileID: 171331730958833283}
   - component: {fileID: -7562314586762476132}
+  - component: {fileID: -8684621736704528541}
   m_Layer: 0
-  m_Name: bullet5
+  m_Name: GreenRocket
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,6 +103,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   worldPosition: {x: 0, y: 0, z: 0}
+  myTower: {fileID: 0}
 --- !u!70 &171331730958833283
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,3 +141,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8684621736704528541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208232975702459398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a83acc612faaef4e80f04b1b0b19f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10

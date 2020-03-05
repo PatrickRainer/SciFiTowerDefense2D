@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 450904}
   - component: {fileID: -6766631070554578185}
   - component: {fileID: -5392836102306106367}
+  - component: {fileID: 6206145892775744618}
   - component: {fileID: 2799486344676845578}
   - component: {fileID: 8431696713691600908}
   m_Layer: 0
@@ -68,6 +69,19 @@ MonoBehaviour:
   speed: 5
   damage: 50
   enemyToFollow: {fileID: 0}
+--- !u!114 &6206145892775744618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a83acc612faaef4e80f04b1b0b19f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10
 --- !u!58 &2799486344676845578
 CircleCollider2D:
   m_ObjectHideFlags: 0
